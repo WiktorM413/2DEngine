@@ -5,7 +5,7 @@
 class FMT
 {
 public:
-    void info(std::string message);
-    void warn(std::string message);
-    void error(std::string message);
+    static void info(std::string message);
+    static void warn(std::string message);
+    static void error(std::string message);
 };
