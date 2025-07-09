@@ -1,18 +1,24 @@
 #pragma once
 
 #include <cinttypes>
+#include <string>
 #include <fstream>
 
-class Settings
-{
-private:
-    std::ifstream options;
-    
-public:
-    Settings();
-    ~Settings();
+#include <rapidjson/document.h>
 
-    uint16_t GetWidth();
-    uint16_t GetHeight();
-    std::string GetTitle();
+class Settings
+{ 
+private:
+    static rapidjson::Document doc;
+
+public:
+    static void Initialize();
+    static uint16_t GetWidth();
+    static uint16_t GetHeight();
+    static std::string GetTitle();
+
+    static void SetWidth(uint16_t width);
+    static void SetHeight(uint16_t height);
+    static void SetTitle(std::string title);
 };
+

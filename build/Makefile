@@ -153,6 +153,30 @@ src/Log.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2DEngine.dir/build.make CMakeFiles/2DEngine.dir/src/Log.cpp.s
 .PHONY : src/Log.cpp.s
 
+src/Settings.o: src/Settings.cpp.o
+.PHONY : src/Settings.o
+
+# target to build an object file
+src/Settings.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2DEngine.dir/build.make CMakeFiles/2DEngine.dir/src/Settings.cpp.o
+.PHONY : src/Settings.cpp.o
+
+src/Settings.i: src/Settings.cpp.i
+.PHONY : src/Settings.i
+
+# target to preprocess a source file
+src/Settings.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2DEngine.dir/build.make CMakeFiles/2DEngine.dir/src/Settings.cpp.i
+.PHONY : src/Settings.cpp.i
+
+src/Settings.s: src/Settings.cpp.s
+.PHONY : src/Settings.s
+
+# target to generate assembly for a file
+src/Settings.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2DEngine.dir/build.make CMakeFiles/2DEngine.dir/src/Settings.cpp.s
+.PHONY : src/Settings.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -189,6 +213,9 @@ help:
 	@echo "... src/Log.o"
 	@echo "... src/Log.i"
 	@echo "... src/Log.s"
+	@echo "... src/Settings.o"
+	@echo "... src/Settings.i"
+	@echo "... src/Settings.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

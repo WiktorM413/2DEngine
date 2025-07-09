@@ -85,12 +85,12 @@ clean: CMakeFiles/2DEngine.dir/clean
 CMakeFiles/2DEngine.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2DEngine.dir/build.make CMakeFiles/2DEngine.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2DEngine.dir/build.make CMakeFiles/2DEngine.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/Wiktor/Projects/cpp/2DEngine/build/CMakeFiles --progress-num=1,2,3 "Built target 2DEngine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/Wiktor/Projects/cpp/2DEngine/build/CMakeFiles --progress-num=1,2,3,4 "Built target 2DEngine"
 .PHONY : CMakeFiles/2DEngine.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/2DEngine.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Wiktor/Projects/cpp/2DEngine/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/Wiktor/Projects/cpp/2DEngine/build/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/2DEngine.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/Wiktor/Projects/cpp/2DEngine/build/CMakeFiles 0
 .PHONY : CMakeFiles/2DEngine.dir/rule
@@ -102,7 +102,7 @@ CMakeFiles/2DEngine.dir/rule: cmake_check_build_system
 # codegen rule for target.
 CMakeFiles/2DEngine.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2DEngine.dir/build.make CMakeFiles/2DEngine.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/Wiktor/Projects/cpp/2DEngine/build/CMakeFiles --progress-num=1,2,3 "Finished codegen for target 2DEngine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/Wiktor/Projects/cpp/2DEngine/build/CMakeFiles --progress-num=1,2,3,4 "Finished codegen for target 2DEngine"
 .PHONY : CMakeFiles/2DEngine.dir/codegen
 
 # clean rule for target.
