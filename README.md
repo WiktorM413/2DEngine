@@ -3,23 +3,23 @@
 # ✅ Game Engine Core Checklist (Linux, SFML, Solo Dev)
 
 ## 🏗️ Phase 1: Foundation & Tooling
-- [✅] Initialize GitHub repo and push initial commit
-- [✅] Set up CMake with targets for engine and tests
-- [✅] Define directory structure:
-  - [✅] `/engine/include` for headers
-  - [✅] `/engine/src` for source files
-  - [✅] `/tests` for test code
-- [✅] Install SFML via package manager or build from source
-- [✅] Configure CMake to find SFML libraries correctly
-- [✅] Write code to open a resizable window (800×600 default)
-- [✅] Handle window close event gracefully
-- [✅] Implement fixed timestep game loop skeleton
-- [✅] Add basic logging system:
-  - [✅] Support INFO, WARN, ERROR levels
-  - [✅] Log window creation and shutdown events
-- [ ] Load engine settings from a JSON config file:
-  - [ ] Parse window size and title
-  - [ ] Handle missing or invalid config with defaults
+- ✅ Initialize GitHub repo and push initial commit
+- ✅ Set up CMake with targets for engine and tests
+- ✅ Define directory structure:
+  - ✅ `/engine/include` for headers
+  - ✅ `/engine/src` for source files
+  - ✅ `/tests` for test code
+- ✅ Install SFML via package manager or build from source
+- ✅ Configure CMake to find SFML libraries correctly
+- ✅ Write code to open a resizable window (800×600 default)
+- ✅ Handle window close event gracefully
+- ✅ Implement fixed timestep game loop skeleton
+- ✅ Add basic logging system:
+  - ✅ Support INFO, WARN, ERROR levels
+  - ✅ Log window creation and shutdown events
+- ✅ Load engine settings from a JSON config file:
+  - ✅ Parse window size and title
+  - ✅ Handle missing or invalid config with defaults
 
 ---
 
