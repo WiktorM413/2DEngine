@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/2DEngine.dir/link.d"
+  "CMakeFiles/2DEngine.dir/src/Log.cpp.o"
+  "CMakeFiles/2DEngine.dir/src/Log.cpp.o.d"
   "CMakeFiles/2DEngine.dir/src/main.cpp.o"
   "CMakeFiles/2DEngine.dir/src/main.cpp.o.d"
   "bin/2DEngine"

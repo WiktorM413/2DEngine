@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/Wiktor/Projects/cpp/2DEngine/src/Log.cpp" "CMakeFiles/2DEngine.dir/src/Log.cpp.o" "gcc" "CMakeFiles/2DEngine.dir/src/Log.cpp.o.d"
   "/home/Wiktor/Projects/cpp/2DEngine/src/main.cpp" "CMakeFiles/2DEngine.dir/src/main.cpp.o" "gcc" "CMakeFiles/2DEngine.dir/src/main.cpp.o.d"
   "" "bin/2DEngine" "gcc" "CMakeFiles/2DEngine.dir/link.d"
   )

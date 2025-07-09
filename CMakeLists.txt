@@ -1,3 +1,4 @@
+
 cmake_minimum_required(VERSION 3.16)
 project(2DEngine LANGUAGES CXX)
 
@@ -13,11 +14,18 @@ file(GLOB_RECURSE SOURCES
 
 add_executable(2DEngine ${SOURCES})
 
+# Paths
 set(SFML_ROOT "${CMAKE_SOURCE_DIR}/third_party/SFML/install")
 
-target_include_directories(2DEngine PRIVATE ${SFML_ROOT}/include)
+# Include directories (header-only libs like RapidJSON)
+target_include_directories(2DEngine PRIVATE
+    ${SFML_ROOT}/include
+)
+
+# Link directories (for shared SFML .so libs)
 link_directories(${SFML_ROOT}/lib)
 
+# Link SFML libraries
 target_link_libraries(2DEngine
     PRIVATE
         sfml-graphics

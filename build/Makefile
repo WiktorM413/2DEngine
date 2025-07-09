@@ -129,6 +129,30 @@ depend:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2DEngine.dir/build.make CMakeFiles/2DEngine.dir/build
 .PHONY : 2DEngine/fast
 
+src/Log.o: src/Log.cpp.o
+.PHONY : src/Log.o
+
+# target to build an object file
+src/Log.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2DEngine.dir/build.make CMakeFiles/2DEngine.dir/src/Log.cpp.o
+.PHONY : src/Log.cpp.o
+
+src/Log.i: src/Log.cpp.i
+.PHONY : src/Log.i
+
+# target to preprocess a source file
+src/Log.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2DEngine.dir/build.make CMakeFiles/2DEngine.dir/src/Log.cpp.i
+.PHONY : src/Log.cpp.i
+
+src/Log.s: src/Log.cpp.s
+.PHONY : src/Log.s
+
+# target to generate assembly for a file
+src/Log.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2DEngine.dir/build.make CMakeFiles/2DEngine.dir/src/Log.cpp.s
+.PHONY : src/Log.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -162,6 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... 2DEngine"
+	@echo "... src/Log.o"
+	@echo "... src/Log.i"
+	@echo "... src/Log.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

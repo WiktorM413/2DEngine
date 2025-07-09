@@ -1,1 +1,1 @@
-/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/2DEngine.dir/link.d CMakeFiles/2DEngine.dir/src/main.cpp.o -o bin/2DEngine  -lsfml-graphics -lsfml-window -lsfml-system -lpthread
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/2DEngine.dir/link.d CMakeFiles/2DEngine.dir/src/Log.cpp.o CMakeFiles/2DEngine.dir/src/main.cpp.o -o bin/2DEngine  -lsfml-graphics -lsfml-window -lsfml-system -lpthread
