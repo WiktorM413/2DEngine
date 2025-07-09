@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/2DEngine.dir/link.d"
+  "CMakeFiles/2DEngine.dir/src/EventHandler.cpp.o"
+  "CMakeFiles/2DEngine.dir/src/EventHandler.cpp.o.d"
   "CMakeFiles/2DEngine.dir/src/Log.cpp.o"
   "CMakeFiles/2DEngine.dir/src/Log.cpp.o.d"
   "CMakeFiles/2DEngine.dir/src/Settings.cpp.o"

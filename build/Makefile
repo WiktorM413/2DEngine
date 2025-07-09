@@ -129,6 +129,30 @@ depend:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2DEngine.dir/build.make CMakeFiles/2DEngine.dir/build
 .PHONY : 2DEngine/fast
 
+src/EventHandler.o: src/EventHandler.cpp.o
+.PHONY : src/EventHandler.o
+
+# target to build an object file
+src/EventHandler.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2DEngine.dir/build.make CMakeFiles/2DEngine.dir/src/EventHandler.cpp.o
+.PHONY : src/EventHandler.cpp.o
+
+src/EventHandler.i: src/EventHandler.cpp.i
+.PHONY : src/EventHandler.i
+
+# target to preprocess a source file
+src/EventHandler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2DEngine.dir/build.make CMakeFiles/2DEngine.dir/src/EventHandler.cpp.i
+.PHONY : src/EventHandler.cpp.i
+
+src/EventHandler.s: src/EventHandler.cpp.s
+.PHONY : src/EventHandler.s
+
+# target to generate assembly for a file
+src/EventHandler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2DEngine.dir/build.make CMakeFiles/2DEngine.dir/src/EventHandler.cpp.s
+.PHONY : src/EventHandler.cpp.s
+
 src/Log.o: src/Log.cpp.o
 .PHONY : src/Log.o
 
@@ -210,6 +234,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... 2DEngine"
+	@echo "... src/EventHandler.o"
+	@echo "... src/EventHandler.i"
+	@echo "... src/EventHandler.s"
 	@echo "... src/Log.o"
 	@echo "... src/Log.i"
 	@echo "... src/Log.s"

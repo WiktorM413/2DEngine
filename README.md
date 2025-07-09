@@ -25,10 +25,10 @@
 
 ## 🎮 Phase 2: Input & Rendering
 ### Input
-- [ ] Poll keyboard state each frame
-- [ ] Detect key press and release events
-- [ ] Poll mouse position and buttons
-- [ ] Fire callbacks or post events on input
+- ✅ Poll keyboard state each frame
+- ✅ Detect key press and release events
+- ✅ Poll mouse position and buttons
+- ✅ Fire callbacks or post events on input
 - [ ] Optional: Add basic gamepad support (connect, read buttons)
   
 ### Rendering

@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -I/home/Wiktor/Projects/cpp/2DEngine/third_party/SFML/install/include
 
-CXX_FLAGS = -std=gnu++17
+CXX_FLAGS = -std=gnu++20
 

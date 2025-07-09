@@ -8,9 +8,8 @@
 
 #include <fstream>
 
-rapidjson::Document Settings::doc;
 
-void Settings::Initialize()
+Settings::Settings()
 {
     std::ifstream options("../options.json");
     rapidjson::IStreamWrapper isw(options);

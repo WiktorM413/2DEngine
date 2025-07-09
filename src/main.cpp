@@ -2,23 +2,32 @@
 
 #include "../include/Log.h"
 #include "../include/Settings.h"
+#include "../include/EventHandler.h"
 
 using namespace std;
 
 int main()
 {   
-    Settings::Initialize();
+    Settings settings;
+    EventHandler eventHandler;
 
-    sf::Window window(sf::VideoMode({Settings::GetWidth(), Settings::GetHeight()}), Settings::GetTitle());
+    sf::Window window(sf::VideoMode({settings.GetWidth(), settings.GetHeight()}), settings.GetTitle());
     FMT::info("Window created\n");
-    const auto onClose = [&window](const sf::Event::Closed&)
+    
+    eventHandler.AddEventListener<sf::Event::Closed>([&window](const sf::Event::Closed&)
     {
         FMT::info("Closing window\n");
         window.close();
-    };
+    });
+    
+    eventHandler.AddEventListener<sf::Event::KeyPressed>([](const sf::Event::KeyPressed&)
+    {
+        FMT::info("A key has been pressed\n");
+    });
+
     while (window.isOpen())
     {
-        window.handleEvents(onClose);
+        eventHandler.HandleEvents(&window);
         
         window.display();
     }
