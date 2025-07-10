@@ -4,6 +4,7 @@
 #include "../include/Settings.h"
 #include "../include/EventHandler.h"
 #include "../include/Renderer.h"
+#include "../include/SpriteComponent.h"
 
 using namespace std;
 
@@ -39,6 +40,9 @@ int main()
     {
         FMT::info("enter key pressed");
     });
+
+    SpriteComponent sprite;
+
     while (window.isOpen())
     {
         eventHandler.HandleEvents(&window);
