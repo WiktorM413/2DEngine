@@ -24,7 +24,6 @@ int main()
         window.close();
         exit(0);
     });
-    
     eventHandler.AddEventListener<sf::Event::KeyPressed>([](const sf::Event::KeyPressed& key)
     {
         if (key.scancode == sf::Keyboard::Scancode::D)
