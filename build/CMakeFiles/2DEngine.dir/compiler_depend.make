@@ -178,6 +178,7 @@ CMakeFiles/2DEngine.dir/src/EventHandler.cpp.o: /home/Wiktor/Projects/cpp/2DEngi
   /usr/include/c++/15.1.1/bits/ios_base.h \
   /usr/include/c++/15.1.1/bits/istream.tcc \
   /usr/include/c++/15.1.1/bits/iterator_concepts.h \
+  /usr/include/c++/15.1.1/bits/list.tcc \
   /usr/include/c++/15.1.1/bits/locale_classes.h \
   /usr/include/c++/15.1.1/bits/locale_classes.tcc \
   /usr/include/c++/15.1.1/bits/locale_conv.h \
@@ -226,6 +227,7 @@ CMakeFiles/2DEngine.dir/src/EventHandler.cpp.o: /home/Wiktor/Projects/cpp/2DEngi
   /usr/include/c++/15.1.1/bits/stl_iterator.h \
   /usr/include/c++/15.1.1/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/15.1.1/bits/stl_iterator_base_types.h \
+  /usr/include/c++/15.1.1/bits/stl_list.h \
   /usr/include/c++/15.1.1/bits/stl_pair.h \
   /usr/include/c++/15.1.1/bits/stl_raw_storage_iter.h \
   /usr/include/c++/15.1.1/bits/stl_relops.h \
@@ -284,6 +286,7 @@ CMakeFiles/2DEngine.dir/src/EventHandler.cpp.o: /home/Wiktor/Projects/cpp/2DEngi
   /usr/include/c++/15.1.1/istream \
   /usr/include/c++/15.1.1/iterator \
   /usr/include/c++/15.1.1/limits \
+  /usr/include/c++/15.1.1/list \
   /usr/include/c++/15.1.1/locale \
   /usr/include/c++/15.1.1/memory \
   /usr/include/c++/15.1.1/new \
@@ -1007,6 +1010,7 @@ CMakeFiles/2DEngine.dir/src/main.cpp.o: /home/Wiktor/Projects/cpp/2DEngine/src/m
   /usr/include/c++/15.1.1/bits/ios_base.h \
   /usr/include/c++/15.1.1/bits/istream.tcc \
   /usr/include/c++/15.1.1/bits/iterator_concepts.h \
+  /usr/include/c++/15.1.1/bits/list.tcc \
   /usr/include/c++/15.1.1/bits/locale_classes.h \
   /usr/include/c++/15.1.1/bits/locale_classes.tcc \
   /usr/include/c++/15.1.1/bits/locale_conv.h \
@@ -1055,6 +1059,7 @@ CMakeFiles/2DEngine.dir/src/main.cpp.o: /home/Wiktor/Projects/cpp/2DEngine/src/m
   /usr/include/c++/15.1.1/bits/stl_iterator.h \
   /usr/include/c++/15.1.1/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/15.1.1/bits/stl_iterator_base_types.h \
+  /usr/include/c++/15.1.1/bits/stl_list.h \
   /usr/include/c++/15.1.1/bits/stl_pair.h \
   /usr/include/c++/15.1.1/bits/stl_raw_storage_iter.h \
   /usr/include/c++/15.1.1/bits/stl_relops.h \
@@ -1116,6 +1121,7 @@ CMakeFiles/2DEngine.dir/src/main.cpp.o: /home/Wiktor/Projects/cpp/2DEngine/src/m
   /usr/include/c++/15.1.1/istream \
   /usr/include/c++/15.1.1/iterator \
   /usr/include/c++/15.1.1/limits \
+  /usr/include/c++/15.1.1/list \
   /usr/include/c++/15.1.1/locale \
   /usr/include/c++/15.1.1/memory \
   /usr/include/c++/15.1.1/new \
@@ -1547,6 +1553,8 @@ CMakeFiles/2DEngine.dir/src/Settings.cpp.o:
 
 /usr/include/c++/15.1.1/cstdio:
 
+/usr/include/c++/15.1.1/concepts:
+
 /usr/include/bits/uio_lim.h:
 
 /usr/include/bits/types/timer_t.h:
@@ -1598,8 +1606,6 @@ CMakeFiles/2DEngine.dir/src/Settings.cpp.o:
 /usr/include/bits/struct_mutex.h:
 
 /usr/include/bits/types/__mbstate_t.h:
-
-/usr/include/c++/15.1.1/concepts:
 
 /usr/include/bits/stdint-least.h:
 
@@ -1801,6 +1807,12 @@ CMakeFiles/2DEngine.dir/src/Settings.cpp.o:
 
 /home/Wiktor/Projects/cpp/2DEngine/third_party/SFML/install/include/SFML/Window/Context.hpp:
 
+/usr/include/c++/15.1.1/cstddef:
+
+/usr/include/bits/pthreadtypes-arch.h:
+
+/usr/include/c++/15.1.1/bits/stl_pair.h:
+
 /usr/include/gnu/stubs.h:
 
 /home/Wiktor/Projects/cpp/2DEngine/third_party/SFML/install/include/SFML/Config.hpp:
@@ -1921,12 +1933,6 @@ CMakeFiles/2DEngine.dir/src/EventHandler.cpp.o:
 
 /home/Wiktor/Projects/cpp/2DEngine/third_party/SFML/install/include/SFML/System/Exception.hpp:
 
-/usr/include/bits/pthreadtypes-arch.h:
-
-/usr/include/c++/15.1.1/bits/stl_pair.h:
-
-/usr/include/c++/15.1.1/cstddef:
-
 /home/Wiktor/Projects/cpp/2DEngine/third_party/SFML/install/include/SFML/System/InputStream.hpp:
 
 /usr/lib32/libbrotlicommon.so.1:
@@ -1986,6 +1992,8 @@ CMakeFiles/2DEngine.dir/src/EventHandler.cpp.o:
 /usr/include/bits/wctype-wchar.h:
 
 /usr/include/bits/xopen_lim.h:
+
+/usr/include/c++/15.1.1/bits/list.tcc:
 
 /usr/include/c++/15.1.1/array:
 
@@ -2121,6 +2129,8 @@ CMakeFiles/2DEngine.dir/src/EventHandler.cpp.o:
 
 /usr/include/c++/15.1.1/bits/move.h:
 
+/usr/include/c++/15.1.1/list:
+
 /usr/include/c++/15.1.1/bits/stl_heap.h:
 
 /usr/include/c++/15.1.1/bits/new_allocator.h:
@@ -2172,6 +2182,8 @@ CMakeFiles/2DEngine.dir/src/EventHandler.cpp.o:
 /home/Wiktor/Projects/cpp/2DEngine/third_party/SFML/install/include/SFML/System/String.hpp:
 
 /usr/include/c++/15.1.1/bits/stl_iterator_base_types.h:
+
+/usr/include/c++/15.1.1/bits/stl_list.h:
 
 /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/time_members.h:
 

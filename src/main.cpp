@@ -20,11 +20,21 @@ int main()
         window.close();
     });
     
-    eventHandler.AddEventListener<sf::Event::KeyPressed>([](const sf::Event::KeyPressed&)
+    eventHandler.AddEventListener<sf::Event::KeyPressed>([](const sf::Event::KeyPressed& key)
     {
-        FMT::info("A key has been pressed\n");
+        if (key.scancode == sf::Keyboard::Scancode::D)
+        {
+            FMT::info("D key is pressed");
+        }
     });
-
+    eventHandler.OnKeyReleased(sf::Keyboard::Scancode::Enter, []()
+    {
+        FMT::info("enter key released");
+    });
+    eventHandler.OnKeyPressed(sf::Keyboard::Scancode::Enter, []()
+    {
+        FMT::info("enter key pressed");
+    });
     while (window.isOpen())
     {
         eventHandler.HandleEvents(&window);

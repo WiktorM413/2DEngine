@@ -32,8 +32,8 @@
 - ✅ Detect key press and release events  
 - ✅ Poll mouse position and button states  
 - ✅ Fire callbacks or push internal input events  
-- [ ] Track key state per frame (for "just pressed", "just released")  
-- [ ] Add simple input map or key binding abstraction  
+- ✅ Track key state per frame (for "just pressed", "just released")  
+- ✅ Add simple input map or key binding abstraction  
 - [ ] Optional: Gamepad detection and button polling
 
 ---
