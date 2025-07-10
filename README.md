@@ -39,8 +39,8 @@
 ---
 
 ### 🎨 2D Rendering
-- [ ] Render colored rectangles using `sf::RectangleShape`  
-- [ ] Load `.png` textures using `sf::Texture::loadFromFile`  
+- ✅ Render colored rectangles using `sf::RectangleShape`  
+- ✅ Load `.png` textures using `sf::Texture::loadFromFile`  
 - [ ] Create a basic `SpriteComponent` class:
   - [ ] Holds a texture reference  
   - [ ] Position, scale, and rotation in 2D space  

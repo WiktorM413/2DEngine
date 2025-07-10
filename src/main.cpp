@@ -3,6 +3,7 @@
 #include "../include/Log.h"
 #include "../include/Settings.h"
 #include "../include/EventHandler.h"
+#include "../include/Renderer.h"
 
 using namespace std;
 
@@ -10,14 +11,18 @@ int main()
 {   
     Settings settings;
     EventHandler eventHandler;
+    Renderer renderer;
 
-    sf::Window window(sf::VideoMode({settings.GetWidth(), settings.GetHeight()}), settings.GetTitle());
-    FMT::info("Window created\n");
+    sf::RenderWindow window(sf::VideoMode({settings.GetWidth(), settings.GetHeight()}), settings.GetTitle());
     
-    eventHandler.AddEventListener<sf::Event::Closed>([&window](const sf::Event::Closed&)
+    sf::Shape* shape = renderer.RenderShape(Shapes::Rectangle{});
+
+    eventHandler.AddEventListener<sf::Event::Closed>([&window, &shape](const sf::Event::Closed&)
     {
+        delete shape;
         FMT::info("Closing window\n");
         window.close();
+        exit(0);
     });
     
     eventHandler.AddEventListener<sf::Event::KeyPressed>([](const sf::Event::KeyPressed& key)
@@ -39,6 +44,10 @@ int main()
     {
         eventHandler.HandleEvents(&window);
         
+        window.clear(sf::Color::Black);
+
+        window.draw(*shape);
+
         window.display();
     }
 }

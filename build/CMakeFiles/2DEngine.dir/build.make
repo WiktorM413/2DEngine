@@ -100,10 +100,24 @@ CMakeFiles/2DEngine.dir/src/Log.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2DEngine.dir/src/Log.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/Wiktor/Projects/cpp/2DEngine/src/Log.cpp -o CMakeFiles/2DEngine.dir/src/Log.cpp.s
 
+CMakeFiles/2DEngine.dir/src/Renderer.cpp.o: CMakeFiles/2DEngine.dir/flags.make
+CMakeFiles/2DEngine.dir/src/Renderer.cpp.o: /home/Wiktor/Projects/cpp/2DEngine/src/Renderer.cpp
+CMakeFiles/2DEngine.dir/src/Renderer.cpp.o: CMakeFiles/2DEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/Wiktor/Projects/cpp/2DEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/2DEngine.dir/src/Renderer.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2DEngine.dir/src/Renderer.cpp.o -MF CMakeFiles/2DEngine.dir/src/Renderer.cpp.o.d -o CMakeFiles/2DEngine.dir/src/Renderer.cpp.o -c /home/Wiktor/Projects/cpp/2DEngine/src/Renderer.cpp
+
+CMakeFiles/2DEngine.dir/src/Renderer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/2DEngine.dir/src/Renderer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/Wiktor/Projects/cpp/2DEngine/src/Renderer.cpp > CMakeFiles/2DEngine.dir/src/Renderer.cpp.i
+
+CMakeFiles/2DEngine.dir/src/Renderer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2DEngine.dir/src/Renderer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/Wiktor/Projects/cpp/2DEngine/src/Renderer.cpp -o CMakeFiles/2DEngine.dir/src/Renderer.cpp.s
+
 CMakeFiles/2DEngine.dir/src/Settings.cpp.o: CMakeFiles/2DEngine.dir/flags.make
 CMakeFiles/2DEngine.dir/src/Settings.cpp.o: /home/Wiktor/Projects/cpp/2DEngine/src/Settings.cpp
 CMakeFiles/2DEngine.dir/src/Settings.cpp.o: CMakeFiles/2DEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/Wiktor/Projects/cpp/2DEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/2DEngine.dir/src/Settings.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/Wiktor/Projects/cpp/2DEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/2DEngine.dir/src/Settings.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2DEngine.dir/src/Settings.cpp.o -MF CMakeFiles/2DEngine.dir/src/Settings.cpp.o.d -o CMakeFiles/2DEngine.dir/src/Settings.cpp.o -c /home/Wiktor/Projects/cpp/2DEngine/src/Settings.cpp
 
 CMakeFiles/2DEngine.dir/src/Settings.cpp.i: cmake_force
@@ -114,10 +128,24 @@ CMakeFiles/2DEngine.dir/src/Settings.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2DEngine.dir/src/Settings.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/Wiktor/Projects/cpp/2DEngine/src/Settings.cpp -o CMakeFiles/2DEngine.dir/src/Settings.cpp.s
 
+CMakeFiles/2DEngine.dir/src/SpriteComponent.cpp.o: CMakeFiles/2DEngine.dir/flags.make
+CMakeFiles/2DEngine.dir/src/SpriteComponent.cpp.o: /home/Wiktor/Projects/cpp/2DEngine/src/SpriteComponent.cpp
+CMakeFiles/2DEngine.dir/src/SpriteComponent.cpp.o: CMakeFiles/2DEngine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/Wiktor/Projects/cpp/2DEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/2DEngine.dir/src/SpriteComponent.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2DEngine.dir/src/SpriteComponent.cpp.o -MF CMakeFiles/2DEngine.dir/src/SpriteComponent.cpp.o.d -o CMakeFiles/2DEngine.dir/src/SpriteComponent.cpp.o -c /home/Wiktor/Projects/cpp/2DEngine/src/SpriteComponent.cpp
+
+CMakeFiles/2DEngine.dir/src/SpriteComponent.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/2DEngine.dir/src/SpriteComponent.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/Wiktor/Projects/cpp/2DEngine/src/SpriteComponent.cpp > CMakeFiles/2DEngine.dir/src/SpriteComponent.cpp.i
+
+CMakeFiles/2DEngine.dir/src/SpriteComponent.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/2DEngine.dir/src/SpriteComponent.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/Wiktor/Projects/cpp/2DEngine/src/SpriteComponent.cpp -o CMakeFiles/2DEngine.dir/src/SpriteComponent.cpp.s
+
 CMakeFiles/2DEngine.dir/src/main.cpp.o: CMakeFiles/2DEngine.dir/flags.make
 CMakeFiles/2DEngine.dir/src/main.cpp.o: /home/Wiktor/Projects/cpp/2DEngine/src/main.cpp
 CMakeFiles/2DEngine.dir/src/main.cpp.o: CMakeFiles/2DEngine.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/Wiktor/Projects/cpp/2DEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/2DEngine.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/Wiktor/Projects/cpp/2DEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/2DEngine.dir/src/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/2DEngine.dir/src/main.cpp.o -MF CMakeFiles/2DEngine.dir/src/main.cpp.o.d -o CMakeFiles/2DEngine.dir/src/main.cpp.o -c /home/Wiktor/Projects/cpp/2DEngine/src/main.cpp
 
 CMakeFiles/2DEngine.dir/src/main.cpp.i: cmake_force
@@ -132,7 +160,9 @@ CMakeFiles/2DEngine.dir/src/main.cpp.s: cmake_force
 2DEngine_OBJECTS = \
 "CMakeFiles/2DEngine.dir/src/EventHandler.cpp.o" \
 "CMakeFiles/2DEngine.dir/src/Log.cpp.o" \
+"CMakeFiles/2DEngine.dir/src/Renderer.cpp.o" \
 "CMakeFiles/2DEngine.dir/src/Settings.cpp.o" \
+"CMakeFiles/2DEngine.dir/src/SpriteComponent.cpp.o" \
 "CMakeFiles/2DEngine.dir/src/main.cpp.o"
 
 # External object files for target 2DEngine
@@ -140,12 +170,14 @@ CMakeFiles/2DEngine.dir/src/main.cpp.s: cmake_force
 
 bin/2DEngine: CMakeFiles/2DEngine.dir/src/EventHandler.cpp.o
 bin/2DEngine: CMakeFiles/2DEngine.dir/src/Log.cpp.o
+bin/2DEngine: CMakeFiles/2DEngine.dir/src/Renderer.cpp.o
 bin/2DEngine: CMakeFiles/2DEngine.dir/src/Settings.cpp.o
+bin/2DEngine: CMakeFiles/2DEngine.dir/src/SpriteComponent.cpp.o
 bin/2DEngine: CMakeFiles/2DEngine.dir/src/main.cpp.o
 bin/2DEngine: CMakeFiles/2DEngine.dir/build.make
 bin/2DEngine: CMakeFiles/2DEngine.dir/compiler_depend.ts
 bin/2DEngine: CMakeFiles/2DEngine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/Wiktor/Projects/cpp/2DEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable bin/2DEngine"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/Wiktor/Projects/cpp/2DEngine/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable bin/2DEngine"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/2DEngine.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

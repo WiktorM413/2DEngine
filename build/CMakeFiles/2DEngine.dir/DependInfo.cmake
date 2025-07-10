@@ -10,7 +10,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/Wiktor/Projects/cpp/2DEngine/src/EventHandler.cpp" "CMakeFiles/2DEngine.dir/src/EventHandler.cpp.o" "gcc" "CMakeFiles/2DEngine.dir/src/EventHandler.cpp.o.d"
   "/home/Wiktor/Projects/cpp/2DEngine/src/Log.cpp" "CMakeFiles/2DEngine.dir/src/Log.cpp.o" "gcc" "CMakeFiles/2DEngine.dir/src/Log.cpp.o.d"
+  "/home/Wiktor/Projects/cpp/2DEngine/src/Renderer.cpp" "CMakeFiles/2DEngine.dir/src/Renderer.cpp.o" "gcc" "CMakeFiles/2DEngine.dir/src/Renderer.cpp.o.d"
   "/home/Wiktor/Projects/cpp/2DEngine/src/Settings.cpp" "CMakeFiles/2DEngine.dir/src/Settings.cpp.o" "gcc" "CMakeFiles/2DEngine.dir/src/Settings.cpp.o.d"
+  "/home/Wiktor/Projects/cpp/2DEngine/src/SpriteComponent.cpp" "CMakeFiles/2DEngine.dir/src/SpriteComponent.cpp.o" "gcc" "CMakeFiles/2DEngine.dir/src/SpriteComponent.cpp.o.d"
   "/home/Wiktor/Projects/cpp/2DEngine/src/main.cpp" "CMakeFiles/2DEngine.dir/src/main.cpp.o" "gcc" "CMakeFiles/2DEngine.dir/src/main.cpp.o.d"
   "" "bin/2DEngine" "gcc" "CMakeFiles/2DEngine.dir/link.d"
   )

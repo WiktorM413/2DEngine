@@ -177,6 +177,30 @@ src/Log.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2DEngine.dir/build.make CMakeFiles/2DEngine.dir/src/Log.cpp.s
 .PHONY : src/Log.cpp.s
 
+src/Renderer.o: src/Renderer.cpp.o
+.PHONY : src/Renderer.o
+
+# target to build an object file
+src/Renderer.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2DEngine.dir/build.make CMakeFiles/2DEngine.dir/src/Renderer.cpp.o
+.PHONY : src/Renderer.cpp.o
+
+src/Renderer.i: src/Renderer.cpp.i
+.PHONY : src/Renderer.i
+
+# target to preprocess a source file
+src/Renderer.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2DEngine.dir/build.make CMakeFiles/2DEngine.dir/src/Renderer.cpp.i
+.PHONY : src/Renderer.cpp.i
+
+src/Renderer.s: src/Renderer.cpp.s
+.PHONY : src/Renderer.s
+
+# target to generate assembly for a file
+src/Renderer.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2DEngine.dir/build.make CMakeFiles/2DEngine.dir/src/Renderer.cpp.s
+.PHONY : src/Renderer.cpp.s
+
 src/Settings.o: src/Settings.cpp.o
 .PHONY : src/Settings.o
 
@@ -200,6 +224,30 @@ src/Settings.s: src/Settings.cpp.s
 src/Settings.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/2DEngine.dir/build.make CMakeFiles/2DEngine.dir/src/Settings.cpp.s
 .PHONY : src/Settings.cpp.s
+
+src/SpriteComponent.o: src/SpriteComponent.cpp.o
+.PHONY : src/SpriteComponent.o
+
+# target to build an object file
+src/SpriteComponent.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2DEngine.dir/build.make CMakeFiles/2DEngine.dir/src/SpriteComponent.cpp.o
+.PHONY : src/SpriteComponent.cpp.o
+
+src/SpriteComponent.i: src/SpriteComponent.cpp.i
+.PHONY : src/SpriteComponent.i
+
+# target to preprocess a source file
+src/SpriteComponent.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2DEngine.dir/build.make CMakeFiles/2DEngine.dir/src/SpriteComponent.cpp.i
+.PHONY : src/SpriteComponent.cpp.i
+
+src/SpriteComponent.s: src/SpriteComponent.cpp.s
+.PHONY : src/SpriteComponent.s
+
+# target to generate assembly for a file
+src/SpriteComponent.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/2DEngine.dir/build.make CMakeFiles/2DEngine.dir/src/SpriteComponent.cpp.s
+.PHONY : src/SpriteComponent.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -240,9 +288,15 @@ help:
 	@echo "... src/Log.o"
 	@echo "... src/Log.i"
 	@echo "... src/Log.s"
+	@echo "... src/Renderer.o"
+	@echo "... src/Renderer.i"
+	@echo "... src/Renderer.s"
 	@echo "... src/Settings.o"
 	@echo "... src/Settings.i"
 	@echo "... src/Settings.s"
+	@echo "... src/SpriteComponent.o"
+	@echo "... src/SpriteComponent.i"
+	@echo "... src/SpriteComponent.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
