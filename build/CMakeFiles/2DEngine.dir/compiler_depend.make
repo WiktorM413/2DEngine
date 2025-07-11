@@ -744,6 +744,7 @@ CMakeFiles/2DEngine.dir/src/Renderer.cpp.o: /home/Wiktor/Projects/cpp/2DEngine/s
   /usr/include/bits/wctype-wchar.h \
   /usr/include/bits/wordsize.h \
   /usr/include/bits/xopen_lim.h \
+  /usr/include/c++/15.1.1/algorithm \
   /usr/include/c++/15.1.1/array \
   /usr/include/c++/15.1.1/backward/auto_ptr.h \
   /usr/include/c++/15.1.1/backward/binders.h \
@@ -814,6 +815,7 @@ CMakeFiles/2DEngine.dir/src/Renderer.cpp.o: /home/Wiktor/Projects/cpp/2DEngine/s
   /usr/include/c++/15.1.1/bits/ptr_traits.h \
   /usr/include/c++/15.1.1/bits/quoted_string.h \
   /usr/include/c++/15.1.1/bits/range_access.h \
+  /usr/include/c++/15.1.1/bits/ranges_algo.h \
   /usr/include/c++/15.1.1/bits/ranges_algobase.h \
   /usr/include/c++/15.1.1/bits/ranges_base.h \
   /usr/include/c++/15.1.1/bits/ranges_cmp.h \
@@ -902,6 +904,7 @@ CMakeFiles/2DEngine.dir/src/Renderer.cpp.o: /home/Wiktor/Projects/cpp/2DEngine/s
   /usr/include/c++/15.1.1/optional \
   /usr/include/c++/15.1.1/ostream \
   /usr/include/c++/15.1.1/pstl/execution_defs.h \
+  /usr/include/c++/15.1.1/pstl/glue_algorithm_defs.h \
   /usr/include/c++/15.1.1/pstl/glue_memory_defs.h \
   /usr/include/c++/15.1.1/pstl/pstl_config.h \
   /usr/include/c++/15.1.1/ratio \
@@ -2141,8 +2144,6 @@ CMakeFiles/2DEngine.dir/src/Log.cpp.o:
 
 /usr/lib/libpcre2-8.so.0:
 
-/usr/lib/libm.so.6:
-
 /usr/lib/libharfbuzz.so.0:
 
 /usr/lib/libgraphite2.so.3:
@@ -2224,6 +2225,12 @@ CMakeFiles/2DEngine.dir/src/Log.cpp.o:
 /home/Wiktor/Projects/cpp/2DEngine/include/Settings.h:
 
 /home/Wiktor/Projects/cpp/2DEngine/src/Settings.cpp:
+
+/usr/lib/libm.so.6:
+
+/usr/include/c++/15.1.1/bits/ranges_algo.h:
+
+/usr/include/c++/15.1.1/algorithm:
 
 /usr/include/rapidjson/reader.h:
 
@@ -2702,6 +2709,8 @@ CMakeFiles/2DEngine.dir/src/Settings.cpp.o:
 /usr/include/bits/pthreadtypes-arch.h:
 
 /usr/include/c++/15.1.1/bits/stl_pair.h:
+
+/usr/include/c++/15.1.1/pstl/glue_algorithm_defs.h:
 
 /usr/include/gnu/stubs.h:
 

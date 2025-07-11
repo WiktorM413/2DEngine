@@ -42,15 +42,7 @@ int main()
         FMT::info("enter key pressed");
     });
 
-    sf::Texture* texture = new sf::Texture();
-    if (!texture->loadFromFile("../img/1369866.png"))
-    {
-        FMT::warn("Error loading image.");
-    }
-
-    SpriteComponent* sprite = renderer->RenderSprite(texture);
-    sprite->SetScale({0.5, 0.5});
-
+    
 
     sf::Font font;
 
@@ -62,6 +54,12 @@ int main()
     sf::Text* text = renderer->RenderText(font, "Example text");
     text->setFillColor(sf::Color::White);
     renderer->SetWindow(&window);
+    
+    SpriteComponent* rectangle1 = renderer->RenderShape(Shapes::Rectangle{});
+    rectangle1->SetScale(50, 50);
+    rectangle1->SetZIndex(3);
+    rectangle1->SetColor(sf::Color::Red);
+
     while (window.isOpen())
     {
 

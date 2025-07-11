@@ -3,6 +3,7 @@
 #include "../include/Log.h"
 #include <filesystem>
 #include <string>
+#include <algorithm>
 
 Renderer::Renderer(sf::RenderWindow* newW, sf::Color newClearColor)
 {
@@ -16,10 +17,6 @@ Renderer::~Renderer()
     {
         delete sprite;
     }
-    for (sf::Shape* shape : shapes)
-    {
-        delete shape;
-    }
 }
 
 void Renderer::draw()
@@ -30,13 +27,14 @@ void Renderer::draw()
         return;
     }
     w->clear();
+
+    sprites.sort([](const SpriteComponent* a, const SpriteComponent* b)
+    {
+       return a->GetZIndex() < b->GetZIndex(); 
+    });
     for (SpriteComponent* sprite : sprites)
     {
         w->draw(*(sprite->GetDrawable()));
-    }
-    for (sf::Shape* shape : shapes)
-    {
-        w->draw(*shape);
     }
 
     for (sf::Text* text : texts)
@@ -54,15 +52,14 @@ void Renderer::draw(sf::RenderWindow* w)
         return;
     }
     w->clear();
-    
+
+    sprites.sort([](const SpriteComponent* a, const SpriteComponent* b)
+    {
+       return a->GetZIndex() < b->GetZIndex(); 
+    });
     for (SpriteComponent* sprite : sprites)
     {
         w->draw(*(sprite->GetDrawable()));
-    }
-
-    for (sf::Shape* shape : shapes)
-    {
-        w->draw(*shape);
     }
 
     for (sf::Text* text : texts)
@@ -111,39 +108,68 @@ SpriteComponent* Renderer::RenderSprite(const std::filesystem::path& filename)
     return sprite;
 }
 
-sf::Shape* Renderer::RenderShape(const Shapes::Circle&, float radius, std::size_t pointCount)
+SpriteComponent* Renderer::RenderShape(const Shapes::Circle&, float radius, std::size_t pointCount)
 {
     sf::CircleShape* shape = new sf::CircleShape(radius, pointCount);
-    shapes.push_back(shape);
-    return shape;
+
+    sf::RenderTexture renderTexture;
+    renderTexture.draw(*shape);
+
+    sf::Texture* texture = new sf::Texture(renderTexture.getTexture());
+
+    SpriteComponent* sprite = new SpriteComponent(texture);
+
+    sprites.push_back(sprite);
+
+    return sprite;
 }
 
-sf::Shape* Renderer::RenderShape(const Shapes::Convex&, std::size_t pointCount)
+SpriteComponent* Renderer::RenderShape(const Shapes::Convex&, std::size_t pointCount)
 {
     sf::ConvexShape* shape = new sf::ConvexShape(pointCount);
-    shapes.push_back(shape);
-    return shape;
+    
+    sf::RenderTexture renderTexture;
+    renderTexture.draw(*shape);
+
+    sf::Texture* texture = new sf::Texture(renderTexture.getTexture());
+
+    SpriteComponent* sprite = new SpriteComponent(texture);
+
+    sprites.push_back(sprite);
+
+    return sprite;
 }
 
-sf::Shape* Renderer::RenderShape(const Shapes::Rectangle&)
-{
-    sf::RectangleShape* shape = new sf::RectangleShape({120, 50});
-    shapes.push_back(shape);
-    return shape;
-}
-
-sf::Shape* Renderer::RenderShape(const Shapes::Rectangle&, sf::Vector2f size)
+SpriteComponent* Renderer::RenderShape(const Shapes::Rectangle&, sf::Vector2f size)
 {
     sf::RectangleShape* shape = new sf::RectangleShape(size);
-    shapes.push_back(shape);
-    return shape;
+    
+    sf::RenderTexture renderTexture;
+    renderTexture.draw(*shape);
+
+    sf::Texture* texture = new sf::Texture(renderTexture.getTexture());
+
+    SpriteComponent* sprite = new SpriteComponent(texture);
+
+    sprites.push_back(sprite);
+
+    return sprite;
 }
 
-sf::Shape* Renderer::RenderShape(const Shapes::Rectangle&, float width, float height)
+SpriteComponent* Renderer::RenderShape(const Shapes::Rectangle&, float width, float height)
 {
     sf::RectangleShape* shape = new sf::RectangleShape({width, height});
-    shapes.push_back(shape);
-    return shape;
+    
+    sf::RenderTexture renderTexture;
+    renderTexture.draw(*shape);
+
+    sf::Texture* texture = new sf::Texture(renderTexture.getTexture());
+
+    SpriteComponent* sprite = new SpriteComponent(texture);
+
+    sprites.push_back(sprite);
+
+    return sprite;
 }
 
 sf::Text* Renderer::RenderText(const sf::Font font, std::string s, uint8_t fontSize, sf::Color color)

@@ -20,7 +20,6 @@ class Renderer
 {
 private:
     std::list<SpriteComponent*> sprites;
-    std::list<sf::Shape*> shapes;
     std::list<sf::Text*> texts;
     sf::RenderWindow* w;
     sf::Color clearColor;
@@ -37,11 +36,10 @@ public:
     SpriteComponent* RenderSprite(sf::Texture* texture);
     SpriteComponent* RenderSprite(const char* path);
     SpriteComponent* RenderSprite(const std::filesystem::path& filename);
-    sf::Shape* RenderShape(const Shapes::Circle&, float radius = 50, std::size_t pointCount = 30);
-    sf::Shape* RenderShape(const Shapes::Convex&, std::size_t pointCount = 50);
-    sf::Shape* RenderShape(const Shapes::Rectangle&);
-    sf::Shape* RenderShape(const Shapes::Rectangle&, sf::Vector2f size);
-    sf::Shape* RenderShape(const Shapes::Rectangle&, float width, float height = 50);
+    SpriteComponent* RenderShape(const Shapes::Circle&, float radius = 50, std::size_t pointCount = 30);
+    SpriteComponent* RenderShape(const Shapes::Convex&, std::size_t pointCount = 50);
+    SpriteComponent* RenderShape(const Shapes::Rectangle&, sf::Vector2f size);
+    SpriteComponent* RenderShape(const Shapes::Rectangle&, float width = 50.f, float height = 50.f);
     sf::Text* RenderText(const sf::Font font, std::string s, uint8_t fontSize = 24, sf::Color color = sf::Color::Black);
 
 };
