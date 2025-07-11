@@ -575,7 +575,9 @@ CMakeFiles/2DEngine.dir/src/Log.cpp.o: /home/Wiktor/Projects/cpp/2DEngine/src/Lo
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stddef.h
 
 CMakeFiles/2DEngine.dir/src/Renderer.cpp.o: /home/Wiktor/Projects/cpp/2DEngine/src/Renderer.cpp \
+  /home/Wiktor/Projects/cpp/2DEngine/include/Log.h \
   /home/Wiktor/Projects/cpp/2DEngine/include/Renderer.h \
+  /home/Wiktor/Projects/cpp/2DEngine/include/SpriteComponent.h \
   /home/Wiktor/Projects/cpp/2DEngine/third_party/SFML/install/include/SFML/Config.hpp \
   /home/Wiktor/Projects/cpp/2DEngine/third_party/SFML/install/include/SFML/Graphics.hpp \
   /home/Wiktor/Projects/cpp/2DEngine/third_party/SFML/install/include/SFML/Graphics/BlendMode.hpp \
@@ -786,6 +788,7 @@ CMakeFiles/2DEngine.dir/src/Renderer.cpp.o: /home/Wiktor/Projects/cpp/2DEngine/s
   /usr/include/c++/15.1.1/bits/ios_base.h \
   /usr/include/c++/15.1.1/bits/istream.tcc \
   /usr/include/c++/15.1.1/bits/iterator_concepts.h \
+  /usr/include/c++/15.1.1/bits/list.tcc \
   /usr/include/c++/15.1.1/bits/locale_classes.h \
   /usr/include/c++/15.1.1/bits/locale_classes.tcc \
   /usr/include/c++/15.1.1/bits/locale_conv.h \
@@ -833,6 +836,7 @@ CMakeFiles/2DEngine.dir/src/Renderer.cpp.o: /home/Wiktor/Projects/cpp/2DEngine/s
   /usr/include/c++/15.1.1/bits/stl_iterator.h \
   /usr/include/c++/15.1.1/bits/stl_iterator_base_funcs.h \
   /usr/include/c++/15.1.1/bits/stl_iterator_base_types.h \
+  /usr/include/c++/15.1.1/bits/stl_list.h \
   /usr/include/c++/15.1.1/bits/stl_pair.h \
   /usr/include/c++/15.1.1/bits/stl_raw_storage_iter.h \
   /usr/include/c++/15.1.1/bits/stl_relops.h \
@@ -890,6 +894,7 @@ CMakeFiles/2DEngine.dir/src/Renderer.cpp.o: /home/Wiktor/Projects/cpp/2DEngine/s
   /usr/include/c++/15.1.1/istream \
   /usr/include/c++/15.1.1/iterator \
   /usr/include/c++/15.1.1/limits \
+  /usr/include/c++/15.1.1/list \
   /usr/include/c++/15.1.1/locale \
   /usr/include/c++/15.1.1/memory \
   /usr/include/c++/15.1.1/new \
@@ -1535,6 +1540,7 @@ CMakeFiles/2DEngine.dir/src/SpriteComponent.cpp.o: /home/Wiktor/Projects/cpp/2DE
   /usr/include/c++/15.1.1/iomanip \
   /usr/include/c++/15.1.1/ios \
   /usr/include/c++/15.1.1/iosfwd \
+  /usr/include/c++/15.1.1/iostream \
   /usr/include/c++/15.1.1/istream \
   /usr/include/c++/15.1.1/iterator \
   /usr/include/c++/15.1.1/limits \
@@ -1619,6 +1625,7 @@ CMakeFiles/2DEngine.dir/src/main.cpp.o: /home/Wiktor/Projects/cpp/2DEngine/src/m
   /home/Wiktor/Projects/cpp/2DEngine/include/Log.h \
   /home/Wiktor/Projects/cpp/2DEngine/include/Renderer.h \
   /home/Wiktor/Projects/cpp/2DEngine/include/Settings.h \
+  /home/Wiktor/Projects/cpp/2DEngine/include/SpriteComponent.h \
   /home/Wiktor/Projects/cpp/2DEngine/third_party/SFML/install/include/SFML/Config.hpp \
   /home/Wiktor/Projects/cpp/2DEngine/third_party/SFML/install/include/SFML/Graphics.hpp \
   /home/Wiktor/Projects/cpp/2DEngine/third_party/SFML/install/include/SFML/Graphics/BlendMode.hpp \
@@ -1938,6 +1945,7 @@ CMakeFiles/2DEngine.dir/src/main.cpp.o: /home/Wiktor/Projects/cpp/2DEngine/src/m
   /usr/include/c++/15.1.1/iomanip \
   /usr/include/c++/15.1.1/ios \
   /usr/include/c++/15.1.1/iosfwd \
+  /usr/include/c++/15.1.1/iostream \
   /usr/include/c++/15.1.1/istream \
   /usr/include/c++/15.1.1/iterator \
   /usr/include/c++/15.1.1/limits \
@@ -2511,9 +2519,9 @@ CMakeFiles/2DEngine.dir/src/Settings.cpp.o:
 
 /home/Wiktor/Projects/cpp/2DEngine/third_party/SFML/install/include/SFML/System/Time.inl:
 
-/home/Wiktor/Projects/cpp/2DEngine/include/SpriteComponent.h:
-
 /home/Wiktor/Projects/cpp/2DEngine/third_party/SFML/install/include/SFML/Graphics/Color.inl:
+
+/home/Wiktor/Projects/cpp/2DEngine/include/SpriteComponent.h:
 
 /usr/include/bits/pthread_stack_min-dynamic.h:
 

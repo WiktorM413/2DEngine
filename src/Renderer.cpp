@@ -1,69 +1,133 @@
 #include "../include/Renderer.h"
 
+#include "../include/Log.h"
 #include <filesystem>
 #include <string>
 
-sf::Sprite* Renderer::RenderSprite(const sf::Texture& texture)
+Renderer::Renderer(sf::RenderWindow* newW, sf::Color newClearColor)
 {
-    textures.emplace_back(texture);
-    sf::Sprite* sprite = new sf::Sprite(texture);
+    w = newW;
+    clearColor = newClearColor;
+}
+
+Renderer::~Renderer()
+{
+    for (SpriteComponent* sprite : sprites)
+    {
+        delete sprite;
+    }
+    for (sf::Shape* shape : shapes)
+    {
+        delete shape;
+    }
+}
+
+void Renderer::draw()
+{
+    if (w == nullptr)
+    {
+        FMT::warn("Warning - null reference in Renderer");
+        return;
+    }
+    w->clear();
+    for (SpriteComponent* sprite : sprites)
+    {
+        w->draw(*(sprite->GetDrawable()));
+    }
+    for (sf::Shape* shape : shapes)
+    {
+        w->draw(*shape);
+    }
+    w->display();
+}
+void Renderer::draw(sf::RenderWindow* w)
+{
+    if (w == nullptr)
+    {
+        FMT::warn("Warning - null reference in Renderer");
+        return;
+    }
+    w->clear();
+    for (SpriteComponent* sprite : sprites)
+    {
+        w->draw(*(sprite->GetDrawable()));
+    }
+    for (sf::Shape* shape : shapes)
+    {
+        w->draw(*shape);
+    }
+    w->display();
+}
+
+SpriteComponent* Renderer::RenderSprite(sf::Texture* texture)
+{
+    SpriteComponent* sprite = new SpriteComponent(texture);
+    sprites.push_back(sprite);
     return sprite;
 }
 
-sf::Sprite* Renderer::RenderSprite(const char* path)
+SpriteComponent* Renderer::RenderSprite(const char* path)
 {
     const std::string s = path;
     const std::filesystem::path filename(s);
-    sf::Texture texture;
+    sf::Texture* texture = new sf::Texture();
     
-    if (texture.loadFromFile(filename))
+    if (texture->loadFromFile(filename))
     {
-        textures.emplace_back(texture);
+        SpriteComponent* sprite = new SpriteComponent(texture);
+        sprites.push_back(sprite);
+        return sprite;
     }
      
-    sf::Sprite* sprite = new sf::Sprite(texture);
-    return sprite;
+    FMT::warn("Failed to loead texture from file: " + filename.string());
+    return nullptr;
 }
 
-sf::Sprite* Renderer::RenderSprite(const std::filesystem::path& filename)
+SpriteComponent* Renderer::RenderSprite(const std::filesystem::path& filename)
 {
-    sf::Texture texture;
+    sf::Texture* texture;
     
-    if (texture.loadFromFile(filename))
+    if (texture->loadFromFile(filename))
     {
-        textures.emplace_back(texture);
+        SpriteComponent* newSprite = new SpriteComponent(texture);
+        sprites.push_back(newSprite);
     }
     
-    sf::Sprite* sprite = new sf::Sprite(texture);
+    SpriteComponent* sprite = new SpriteComponent(texture);
     return sprite;
 }
 
 sf::Shape* Renderer::RenderShape(const Shapes::Circle&, float radius, std::size_t pointCount)
 {
     sf::CircleShape* shape = new sf::CircleShape(radius, pointCount);
+    shapes.push_back(shape);
     return shape;
 }
 
 sf::Shape* Renderer::RenderShape(const Shapes::Convex&, std::size_t pointCount)
 {
     sf::ConvexShape* shape = new sf::ConvexShape(pointCount);
+    shapes.push_back(shape);
     return shape;
 }
 
 sf::Shape* Renderer::RenderShape(const Shapes::Rectangle&)
 {
     sf::RectangleShape* shape = new sf::RectangleShape({120, 50});
+    shapes.push_back(shape);
     return shape;
 }
 
 sf::Shape* Renderer::RenderShape(const Shapes::Rectangle&, sf::Vector2f size)
 {
     sf::RectangleShape* shape = new sf::RectangleShape(size);
+    shapes.push_back(shape);
     return shape;
 }
 
 sf::Shape* Renderer::RenderShape(const Shapes::Rectangle&, float width, float height)
 {
     sf::RectangleShape* shape = new sf::RectangleShape({width, height});
+    shapes.push_back(shape);
     return shape;
 }

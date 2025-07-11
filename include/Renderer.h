@@ -4,7 +4,9 @@
 
 #include <filesystem>
 #include <cstddef>
-#include <vector>
+#include <list>
+
+#include "SpriteComponent.h"
 
 namespace Shapes
 {
@@ -16,12 +18,23 @@ namespace Shapes
 class Renderer
 {
 private:
-    std::vector<sf::Texture> textures;
+    std::list<SpriteComponent*> sprites;
+    std::list<sf::Shape*> shapes;
+    sf::RenderWindow* w;
+    sf::Color clearColor;
 
 public:
-    sf::Sprite* RenderSprite(const sf::Texture& texture);
-    sf::Sprite* RenderSprite(const char* path);
-    sf::Sprite* RenderSprite(const std::filesystem::path& filename);
+    Renderer(sf::RenderWindow* newW = nullptr, sf::Color newClearColor = sf::Color::Transparent);
+    ~Renderer();
+    
+    void draw();
+    void draw(sf::RenderWindow* w);
+
+    void SetWindow(sf::RenderWindow* newW) { w = newW; }
+    sf::RenderWindow* GetWindow() { return w; }
+    SpriteComponent* RenderSprite(sf::Texture* texture);
+    SpriteComponent* RenderSprite(const char* path);
+    SpriteComponent* RenderSprite(const std::filesystem::path& filename);
     sf::Shape* RenderShape(const Shapes::Circle&, float radius = 50, std::size_t pointCount = 30);
     sf::Shape* RenderShape(const Shapes::Convex&, std::size_t pointCount = 50);
     sf::Shape* RenderShape(const Shapes::Rectangle&);

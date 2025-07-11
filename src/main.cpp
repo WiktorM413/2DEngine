@@ -6,21 +6,22 @@
 #include "../include/Renderer.h"
 #include "../include/SpriteComponent.h"
 
+#include <iostream>
+
 using namespace std;
 
 int main()
-{   
+{  
     Settings settings;
     EventHandler eventHandler;
-    Renderer renderer;
+    Renderer* renderer = new Renderer();
 
     sf::RenderWindow window(sf::VideoMode({settings.GetWidth(), settings.GetHeight()}), settings.GetTitle());
     
-    sf::Shape* shape = renderer.RenderShape(Shapes::Rectangle{});
 
-    eventHandler.AddEventListener<sf::Event::Closed>([&window, &shape](const sf::Event::Closed&)
+    eventHandler.AddEventListener<sf::Event::Closed>([&window, &renderer](const sf::Event::Closed&)
     {
-        delete shape;
+        delete renderer;
         FMT::info("Closing window\n");
         window.close();
         exit(0);
@@ -41,16 +42,21 @@ int main()
         FMT::info("enter key pressed");
     });
 
-    SpriteComponent sprite;
+    sf::Texture* texture = new sf::Texture();
+    if (!texture->loadFromFile("../img/1369866.png"))
+    {
+        FMT::warn("Error loading image.");
+    }
 
+    SpriteComponent* sprite = renderer->RenderSprite(texture);
+    sprite->SetScale({0.5, 0.5});
+
+    cout << "Texture: " << texture << "\nSprite: " << sprite->GetTexture() << '\n';
+    renderer->SetWindow(&window);
     while (window.isOpen())
     {
+
         eventHandler.HandleEvents(&window);
-        
-        window.clear(sf::Color::Black);
-
-        window.draw(*shape);
-
-        window.display();
+        renderer->draw();
     }
 }

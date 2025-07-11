@@ -1,27 +1,23 @@
 #include "../include/SpriteComponent.h"
 
+#include <iostream>
+
 SpriteComponent::SpriteComponent()
 {
+    sprite = nullptr;
     texture = new sf::Texture();
-    position = new sf::Vector2f();
-    scale = new sf::Vector2f();
-    rotation = new sf::Angle();
 }
 
-SpriteComponent::SpriteComponent(sf::Texture& newTexture)
+SpriteComponent::SpriteComponent(sf::Texture* newTexture)
 {
-    texture = new sf::Texture(newTexture);
-    position = new sf::Vector2f();
-    scale = new sf::Vector2f();
-    rotation = new sf::Angle();
+    texture = newTexture;
+    sprite = new sf::Sprite(*texture);
 }
 
 SpriteComponent::SpriteComponent(sf::Sprite& newSprite)
 {
-    texture = new sf::Texture(newSprite.getTexture());
-    position = new sf::Vector2f();
-    scale = new sf::Vector2f();
-    rotation = new sf::Angle();
+    sprite = new sf::Sprite(newSprite);
+    texture = new sf::Texture(sprite->getTexture());
 }
 
 SpriteComponent::SpriteComponent(sf::Shape& newShape)
@@ -30,26 +26,42 @@ SpriteComponent::SpriteComponent(sf::Shape& newShape)
     renderTexture.clear(sf::Color::Transparent);
     renderTexture.draw(newShape);
     
-    texture = new sf::Texture(renderTexture.getTexture());
-    position = new sf::Vector2f();
-    scale = new sf::Vector2f();
-    rotation = new sf::Angle();
+    sprite = new sf::Sprite(renderTexture.getTexture());
+    texture = new sf::Texture(sprite->getTexture());
 }
 
 SpriteComponent::~SpriteComponent()
 {
+    delete sprite;
     delete texture;
-    delete position;
-    delete scale;
-    delete rotation;
+}
+
+void SpriteComponent::SetTexture(sf::Texture* newTexture)
+{
+    texture = newTexture;
+    if (sprite != nullptr)
+    {
+        sprite->setTexture(*texture);
+    }
+    else
+    {
+        sprite = new sf::Sprite(*texture);
+    }
+}
+
+void SpriteComponent::SetScale(float targetWidth, float targetHeight)
+{
+    sf::Vector2 textureSize = texture->getSize();
+
+    float scaleX = targetWidth / textureSize.x;
+    float scaleY = targetHeight / textureSize.y;
+
+    float newScale = std::min(scaleX, scaleY);
+
+    sprite->setScale({newScale, newScale});
 }
 
 sf::Sprite* SpriteComponent::GetDrawable()
 {
-    sf::Sprite* sprite = new sf::Sprite(*texture);
-    sprite->setPosition(*position);
-    sprite->setScale(*scale);
-    sprite->setRotation(*rotation);
-
     return sprite;
 }
