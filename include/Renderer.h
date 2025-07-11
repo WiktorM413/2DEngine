@@ -5,6 +5,7 @@
 #include <filesystem>
 #include <cstddef>
 #include <list>
+#include <string>
 
 #include "SpriteComponent.h"
 
@@ -20,6 +21,7 @@ class Renderer
 private:
     std::list<SpriteComponent*> sprites;
     std::list<sf::Shape*> shapes;
+    std::list<sf::Text*> texts;
     sf::RenderWindow* w;
     sf::Color clearColor;
 
@@ -40,4 +42,6 @@ public:
     sf::Shape* RenderShape(const Shapes::Rectangle&);
     sf::Shape* RenderShape(const Shapes::Rectangle&, sf::Vector2f size);
     sf::Shape* RenderShape(const Shapes::Rectangle&, float width, float height = 50);
+    sf::Text* RenderText(const sf::Font font, std::string s, uint8_t fontSize = 24, sf::Color color = sf::Color::Black);
+
 };

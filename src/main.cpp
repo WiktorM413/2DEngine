@@ -51,7 +51,16 @@ int main()
     SpriteComponent* sprite = renderer->RenderSprite(texture);
     sprite->SetScale({0.5, 0.5});
 
-    cout << "Texture: " << texture << "\nSprite: " << sprite->GetTexture() << '\n';
+
+    sf::Font font;
+
+    if (!font.openFromFile("../img/font.ttf"))
+    {
+        FMT::warn("Could not open font");
+    }
+
+    sf::Text* text = renderer->RenderText(font, "Example text");
+    text->setFillColor(sf::Color::White);
     renderer->SetWindow(&window);
     while (window.isOpen())
     {

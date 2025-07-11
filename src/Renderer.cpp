@@ -38,6 +38,12 @@ void Renderer::draw()
     {
         w->draw(*shape);
     }
+
+    for (sf::Text* text : texts)
+    {
+        w->draw(*text);
+    }
+
     w->display();
 }
 void Renderer::draw(sf::RenderWindow* w)
@@ -48,14 +54,22 @@ void Renderer::draw(sf::RenderWindow* w)
         return;
     }
     w->clear();
+    
     for (SpriteComponent* sprite : sprites)
     {
         w->draw(*(sprite->GetDrawable()));
     }
+
     for (sf::Shape* shape : shapes)
     {
         w->draw(*shape);
     }
+
+    for (sf::Text* text : texts)
+    {
+        w->draw(*text);
+    }
+
     w->display();
 }
 
@@ -130,4 +144,17 @@ sf::Shape* Renderer::RenderShape(const Shapes::Rectangle&, float width, float he
     sf::RectangleShape* shape = new sf::RectangleShape({width, height});
     shapes.push_back(shape);
     return shape;
+}
+
+sf::Text* Renderer::RenderText(const sf::Font font, std::string s, uint8_t fontSize, sf::Color color)
+{
+    sf::Text* text = new sf::Text(font);
+    text->setString(s);
+    text->setCharacterSize(24);
+    text->setFillColor(color);
+    text->setStyle(sf::Text::Bold | sf::Text::Underlined);
+
+    texts.push_back(text);
+
+    return text;
 }
