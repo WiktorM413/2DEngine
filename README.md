@@ -1,5 +1,5 @@
 # ✅ Game Engine Core Checklist (Linux, SFML, Solo Dev – 2D)
-##📦 Dependencies
+## 📦 Dependencies
 - rapidjson (for JSON parsing)
 ## 🏗️ Phase 1: Foundation & Tooling
 
