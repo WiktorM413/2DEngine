@@ -1,9 +1,11 @@
 #include "../include/Renderer.h"
 
 #include "../include/Log.h"
+#include "../include/Settings.h"
 #include <filesystem>
 #include <string>
 #include <cmath>
+#include <limits.h>
 
 Renderer::Renderer(sf::RenderWindow* newW, sf::Color newClearColor)
 {
@@ -173,4 +175,43 @@ sf::Text* Renderer::RenderText(const sf::Font& font, std::string s, uint8_t font
     texts.push_back(text);
 
     return text;
+}
+
+void Renderer::RenderBackground(sf::Texture* texture)
+{
+    SpriteComponent* background = new SpriteComponent(texture);
+    background->SetZIndex(INT_MIN);
+    sprites.push_back(background);
+}
+
+void Renderer::RenderBackground(const char* path)
+{
+    const std::string s = path;
+    const std::filesystem::path filename(s);
+    sf::Texture* texture = new sf::Texture();
+    
+    if (texture->loadFromFile(filename))
+    {
+        SpriteComponent* background = new SpriteComponent(texture);
+        sprites.push_back(background);
+        Settings settings;
+        sf::Vector2u size = background->GetTexture()->getSize();
+        background->SetScale({settings.GetWidth() / (float)size.x, settings.GetHeight() / (float)size.y});
+        return;
+    }
+     
+    FMT::warn("Failed to loead texture from file: " + filename.string());
+}
+
+void Renderer::RenderBackground(std::filesystem::path& filename)
+{
+    sf::Texture* texture = new sf::Texture();
+    
+    if (texture->loadFromFile(filename))
+    {
+        SpriteComponent* background = new SpriteComponent(texture);
+        sprites.push_back(background);
+    }
+     
+    FMT::warn("Failed to loead texture from file: " + filename.string());
 }

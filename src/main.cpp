@@ -20,6 +20,8 @@ int main()
     settings.SetWidth(1920);
     settings.SetHeight(1080);
     sf::RenderWindow window(sf::VideoMode({settings.GetWidth(), settings.GetHeight()}), settings.GetTitle());
+
+    renderer->RenderBackground("../img/forest.jpg");
     
 
     eventHandler.AddEventListener<sf::Event::Closed>([&window, &renderer, &camera](const sf::Event::Closed&)

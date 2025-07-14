@@ -39,5 +39,8 @@ public:
     SpriteComponent* RenderShape(const Shapes::Rectangle&, sf::Vector2f size);
     SpriteComponent* RenderShape(const Shapes::Rectangle&, float width = 50.f, float height = 50.f);
     sf::Text* RenderText(const sf::Font& font, std::string s, uint8_t fontSize = 24, sf::Color color = sf::Color::Black);
+    void RenderBackground(sf::Texture* texture);
+    void RenderBackground(const char* path);
+    void RenderBackground(std::filesystem::path& filename);
 
 };

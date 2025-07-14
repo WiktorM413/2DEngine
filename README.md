@@ -50,15 +50,11 @@
 - ✅ Sort by layer/z-index to control render order  
 
 #### Camera (`sf::View`)
-- [ ] Center view on a target (e.g. player position)  
-- [ ] Implement view panning (keyboard/mouse)  
+- ✅ Center view on a target (e.g. player position)  
+- ✅ Implement view panning (keyboard/mouse)  
 - [ ] Support view zoom in/out (mouse wheel or key)  
 - [ ] Adjust camera on window resize (keep aspect ratio)
-
-#### Batching & Performance
-- [ ] Group sprites by texture to minimize state changes  
-- [ ] Use vertex arrays for static tile layers (optional)  
-- [ ] Draw text using `sf::Text` (HUDs, debugging)
+- ✅ Draw text using `sf::Text` (HUDs, debugging)
 
 ---
 
