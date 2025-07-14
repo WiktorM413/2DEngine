@@ -47,7 +47,7 @@
   - ✅ Position, scale, and rotation in 2D space  
 
 - ✅ Draw sprites using SFML's `sf::RenderWindow::draw()`  
-- [ ] Sort by layer/z-index to control render order  
+- ✅ Sort by layer/z-index to control render order  
 
 #### Camera (`sf::View`)
 - [ ] Center view on a target (e.g. player position)  

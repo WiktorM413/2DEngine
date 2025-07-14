@@ -34,10 +34,6 @@ void Renderer::draw()
     });
     for (SpriteComponent* sprite : sprites)
     {
-        if (sprite->GetColor() == sf::Color::Red)
-        {
-            FMT::info("THE RECTABGLE EXISTS");
-        }
         w->draw(*(sprite->GetDrawable()));
     }
 
@@ -100,7 +96,7 @@ SpriteComponent* Renderer::RenderSprite(const char* path)
 
 SpriteComponent* Renderer::RenderSprite(const std::filesystem::path& filename)
 {
-    sf::Texture* texture;
+    sf::Texture* texture = new sf::Texture();
     
     if (texture->loadFromFile(filename))
     {
@@ -114,33 +110,15 @@ SpriteComponent* Renderer::RenderSprite(const std::filesystem::path& filename)
 
 SpriteComponent* Renderer::RenderShape(const Shapes::Circle&, float radius, std::size_t pointCount)
 {
-    sf::CircleShape* shape = new sf::CircleShape(radius, pointCount);
+    sf::CircleShape shape(radius, pointCount);
 
-    sf::RenderTexture renderTexture;
+    unsigned int size = static_cast<unsigned int>(std::ceil(radius * 2));
+    sf::RenderTexture renderTexture({size, size});
     renderTexture.clear();
-    renderTexture.draw(*shape);
+    renderTexture.draw(shape);
     renderTexture.display();
 
     sf::Texture* texture = new sf::Texture(renderTexture.getTexture());
-
-    SpriteComponent* sprite = new SpriteComponent(texture);
-
-    sprites.push_back(sprite);
-
-    return sprite;
-}
-
-SpriteComponent* Renderer::RenderShape(const Shapes::Convex&, std::size_t pointCount)
-{
-    sf::ConvexShape* shape = new sf::ConvexShape(pointCount);
-    
-    sf::RenderTexture renderTexture;
-    renderTexture.clear();
-    renderTexture.draw(*shape);
-    renderTexture.display();
-
-    sf::Texture* texture = new sf::Texture(renderTexture.getTexture());
-
     SpriteComponent* sprite = new SpriteComponent(texture);
 
     sprites.push_back(sprite);
@@ -150,11 +128,11 @@ SpriteComponent* Renderer::RenderShape(const Shapes::Convex&, std::size_t pointC
 
 SpriteComponent* Renderer::RenderShape(const Shapes::Rectangle&, sf::Vector2f size)
 {
-    sf::RectangleShape* shape = new sf::RectangleShape(size);
+    sf::RectangleShape shape(size);
     
     sf::RenderTexture renderTexture({static_cast<unsigned int>(std::ceil(size.x)), static_cast<unsigned int>(std::ceil(size.y))});
     renderTexture.clear();
-    renderTexture.draw(*shape);
+    renderTexture.draw(shape);
     renderTexture.display();
 
     sf::Texture* texture = new sf::Texture(renderTexture.getTexture());
@@ -168,11 +146,11 @@ SpriteComponent* Renderer::RenderShape(const Shapes::Rectangle&, sf::Vector2f si
 
 SpriteComponent* Renderer::RenderShape(const Shapes::Rectangle&, float width, float height)
 {
-    sf::RectangleShape* shape = new sf::RectangleShape({width, height});
+    sf::RectangleShape shape({width, height});
     
     sf::RenderTexture renderTexture({static_cast<unsigned int>(std::ceil(width)), static_cast<unsigned int>(std::ceil(height))});
     renderTexture.clear();
-    renderTexture.draw(*shape);
+    renderTexture.draw(shape);
     renderTexture.display();
 
     sf::Texture* texture = new sf::Texture(renderTexture.getTexture());
@@ -184,7 +162,7 @@ SpriteComponent* Renderer::RenderShape(const Shapes::Rectangle&, float width, fl
     return sprite;
 }
 
-sf::Text* Renderer::RenderText(const sf::Font font, std::string s, uint8_t fontSize, sf::Color color)
+sf::Text* Renderer::RenderText(const sf::Font& font, std::string s, uint8_t fontSize, sf::Color color)
 {
     sf::Text* text = new sf::Text(font);
     text->setString(s);

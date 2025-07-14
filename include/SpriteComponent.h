@@ -7,7 +7,7 @@ class SpriteComponent
 private:
     sf::Sprite* sprite;
     sf::Texture* texture;
-
+    sf::Vector2f position;
     int zIndex = 0;
 
 public:
@@ -19,8 +19,8 @@ public:
 
     void SetTexture(sf::Texture* newTexture);
     sf::Texture* GetTexture() const { return texture; }
-    void SetPosition(sf::Vector2f newPosition) { sprite->setPosition(newPosition); }
-    sf::Vector2f GetPosition() const { return sprite->getPosition(); }
+    void SetPosition(sf::Vector2f newPosition);
+    sf::Vector2f* GetPosition();
     void SetScale(sf::Vector2f newScale) { sprite->setScale(newScale); }
     void SetScale(float targetWidth, float targetHeight);
     sf::Vector2f GetScale() const { return sprite->getScale(); }
@@ -30,6 +30,7 @@ public:
     sf::Color GetColor() const { return sprite->getColor(); }
     void SetZIndex(int newZIndex) { zIndex = newZIndex; }
     int GetZIndex() const { return zIndex; }
+    void Move(sf::Vector2f movePoint);
 
     sf::Sprite* GetDrawable();
 };

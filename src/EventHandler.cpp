@@ -9,20 +9,29 @@ void EventHandler::HandleEvents(sf::Window* window)
         auto it = listeners.find(type);
         if (it != listeners.end())
         {
-            it->second(eventVariant);
+            for (std::function<void(const sf::Event&)> event : it->second)
+            {
+                event(eventVariant);
+            } 
         }
         if constexpr (std::is_same_v<T, sf::Event::KeyPressed>)
         {
-            for (auto& action : keyPressedEvents)
+            for (auto& actions : keyPressedEvents)
             {
-                action.second(eventVariant);
+                for (auto& action : actions.second)
+                {
+                    action(eventVariant);
+                }
             }
         }
         if constexpr (std::is_same_v<T, sf::Event::KeyReleased>)
         {
-            for (auto& action : keyReleasedEvents)
+            for (auto& actions : keyReleasedEvents)
             {
-                action.second(eventVariant);
+                for (auto& action: actions.second)
+                {
+                    action(eventVariant);
+                }
             }
         }
     });
@@ -37,7 +46,7 @@ void EventHandler::OnKeyPressed(sf::Keyboard::Scancode code, std::function<void(
             action();
         }
     };
-    keyPressedEvents.push_back({code, wrapper});
+    keyPressedEvents[code].push_back(wrapper);
 }
 
 void EventHandler::OnKeyReleased(sf::Keyboard::Scancode code, std::function<void()> action)
@@ -49,5 +58,5 @@ void EventHandler::OnKeyReleased(sf::Keyboard::Scancode code, std::function<void
             action();
         }
     };
-    keyReleasedEvents.push_back({code, wrapper});
+    keyReleasedEvents[code].push_back(wrapper);
 }

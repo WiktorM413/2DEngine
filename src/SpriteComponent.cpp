@@ -49,6 +49,17 @@ void SpriteComponent::SetTexture(sf::Texture* newTexture)
     }
 }
 
+void SpriteComponent::SetPosition(sf::Vector2f newPosition)
+{
+    position = newPosition;
+    sprite->setPosition(position);
+}
+
+sf::Vector2f* SpriteComponent::GetPosition()
+{
+    return &position;
+}
+
 void SpriteComponent::SetScale(float targetWidth, float targetHeight)
 {
     sf::Vector2 textureSize = texture->getSize();
@@ -59,6 +70,12 @@ void SpriteComponent::SetScale(float targetWidth, float targetHeight)
     float newScale = std::min(scaleX, scaleY);
 
     sprite->setScale({newScale, newScale});
+}
+
+void SpriteComponent::SpriteComponent::Move(sf::Vector2f movePoint)
+{
+    position += movePoint;
+    SetPosition(position);
 }
 
 sf::Sprite* SpriteComponent::GetDrawable()

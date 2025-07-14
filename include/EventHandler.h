@@ -10,9 +10,9 @@
 class EventHandler
 {
 private:
-    std::unordered_map<std::type_index, std::function<void(const sf::Event&)>> listeners;
-    std::list<std::pair<sf::Keyboard::Scancode, std::function<void(const sf::Event::KeyPressed&)>>> keyPressedEvents;
-    std::list<std::pair<sf::Keyboard::Scancode, std::function<void(const sf::Event::KeyReleased&)>>> keyReleasedEvents;
+    std::unordered_map<std::type_index, std::list<std::function<void(const sf::Event&)>>> listeners;
+    std::unordered_map<sf::Keyboard::Scancode, std::list<std::function<void(const sf::Event::KeyPressed&)>>> keyPressedEvents;
+    std::unordered_map<sf::Keyboard::Scancode, std::list<std::function<void(const sf::Event::KeyReleased&)>>> keyReleasedEvents;
 public:
     template<typename EventType>
     void AddEventListener(std::function<void(const EventType&)> listener)
@@ -22,7 +22,7 @@ public:
         {
             listener(reinterpret_cast<const EventType&>(baseEvent));
         };
-        listeners[type] = wrapper;
+        listeners[type].push_back(wrapper);
     }
     void HandleEvents(sf::Window* window);
     void OnKeyPressed(sf::Keyboard::Scancode code, std::function<void()> action);
