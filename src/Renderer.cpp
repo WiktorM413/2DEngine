@@ -3,7 +3,7 @@
 #include "../include/Log.h"
 #include <filesystem>
 #include <string>
-#include <algorithm>
+#include <cmath>
 
 Renderer::Renderer(sf::RenderWindow* newW, sf::Color newClearColor)
 {
@@ -34,6 +34,10 @@ void Renderer::draw()
     });
     for (SpriteComponent* sprite : sprites)
     {
+        if (sprite->GetColor() == sf::Color::Red)
+        {
+            FMT::info("THE RECTABGLE EXISTS");
+        }
         w->draw(*(sprite->GetDrawable()));
     }
 
@@ -113,7 +117,9 @@ SpriteComponent* Renderer::RenderShape(const Shapes::Circle&, float radius, std:
     sf::CircleShape* shape = new sf::CircleShape(radius, pointCount);
 
     sf::RenderTexture renderTexture;
+    renderTexture.clear();
     renderTexture.draw(*shape);
+    renderTexture.display();
 
     sf::Texture* texture = new sf::Texture(renderTexture.getTexture());
 
@@ -129,7 +135,9 @@ SpriteComponent* Renderer::RenderShape(const Shapes::Convex&, std::size_t pointC
     sf::ConvexShape* shape = new sf::ConvexShape(pointCount);
     
     sf::RenderTexture renderTexture;
+    renderTexture.clear();
     renderTexture.draw(*shape);
+    renderTexture.display();
 
     sf::Texture* texture = new sf::Texture(renderTexture.getTexture());
 
@@ -144,8 +152,10 @@ SpriteComponent* Renderer::RenderShape(const Shapes::Rectangle&, sf::Vector2f si
 {
     sf::RectangleShape* shape = new sf::RectangleShape(size);
     
-    sf::RenderTexture renderTexture;
+    sf::RenderTexture renderTexture({static_cast<unsigned int>(std::ceil(size.x)), static_cast<unsigned int>(std::ceil(size.y))});
+    renderTexture.clear();
     renderTexture.draw(*shape);
+    renderTexture.display();
 
     sf::Texture* texture = new sf::Texture(renderTexture.getTexture());
 
@@ -160,8 +170,10 @@ SpriteComponent* Renderer::RenderShape(const Shapes::Rectangle&, float width, fl
 {
     sf::RectangleShape* shape = new sf::RectangleShape({width, height});
     
-    sf::RenderTexture renderTexture;
+    sf::RenderTexture renderTexture({static_cast<unsigned int>(std::ceil(width)), static_cast<unsigned int>(std::ceil(height))});
+    renderTexture.clear();
     renderTexture.draw(*shape);
+    renderTexture.display();
 
     sf::Texture* texture = new sf::Texture(renderTexture.getTexture());
 

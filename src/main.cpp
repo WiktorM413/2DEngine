@@ -56,9 +56,14 @@ int main()
     renderer->SetWindow(&window);
     
     SpriteComponent* rectangle1 = renderer->RenderShape(Shapes::Rectangle{});
-    rectangle1->SetScale(50, 50);
+    rectangle1->SetScale(100, 100);
+    rectangle1->SetPosition({400, 400});
     rectangle1->SetZIndex(3);
     rectangle1->SetColor(sf::Color::Red);
+
+    //SpriteComponent* circle = renderer->RenderShape(Shapes::Circle{});
+    //circle->SetScale(3, 3);
+    //circle->SetColor(sf::Color::Red);
 
     while (window.isOpen())
     {

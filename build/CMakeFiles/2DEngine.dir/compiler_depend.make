@@ -681,12 +681,22 @@ CMakeFiles/2DEngine.dir/src/Renderer.cpp.o: /home/Wiktor/Projects/cpp/2DEngine/s
   /usr/include/bits/errno.h \
   /usr/include/bits/floatn-common.h \
   /usr/include/bits/floatn.h \
+  /usr/include/bits/flt-eval-method.h \
+  /usr/include/bits/fp-fast.h \
+  /usr/include/bits/fp-logb.h \
   /usr/include/bits/getopt_core.h \
   /usr/include/bits/getopt_posix.h \
+  /usr/include/bits/iscanonical.h \
   /usr/include/bits/libc-header-start.h \
+  /usr/include/bits/libm-simd-decl-stubs.h \
   /usr/include/bits/local_lim.h \
   /usr/include/bits/locale.h \
   /usr/include/bits/long-double.h \
+  /usr/include/bits/math-vector.h \
+  /usr/include/bits/mathcalls-helper-functions.h \
+  /usr/include/bits/mathcalls-macros.h \
+  /usr/include/bits/mathcalls-narrow.h \
+  /usr/include/bits/mathcalls.h \
   /usr/include/bits/posix1_lim.h \
   /usr/include/bits/posix2_lim.h \
   /usr/include/bits/posix_opt.h \
@@ -744,7 +754,6 @@ CMakeFiles/2DEngine.dir/src/Renderer.cpp.o: /home/Wiktor/Projects/cpp/2DEngine/s
   /usr/include/bits/wctype-wchar.h \
   /usr/include/bits/wordsize.h \
   /usr/include/bits/xopen_lim.h \
-  /usr/include/c++/15.1.1/algorithm \
   /usr/include/c++/15.1.1/array \
   /usr/include/c++/15.1.1/backward/auto_ptr.h \
   /usr/include/c++/15.1.1/backward/binders.h \
@@ -815,7 +824,6 @@ CMakeFiles/2DEngine.dir/src/Renderer.cpp.o: /home/Wiktor/Projects/cpp/2DEngine/s
   /usr/include/c++/15.1.1/bits/ptr_traits.h \
   /usr/include/c++/15.1.1/bits/quoted_string.h \
   /usr/include/c++/15.1.1/bits/range_access.h \
-  /usr/include/c++/15.1.1/bits/ranges_algo.h \
   /usr/include/c++/15.1.1/bits/ranges_algobase.h \
   /usr/include/c++/15.1.1/bits/ranges_base.h \
   /usr/include/c++/15.1.1/bits/ranges_cmp.h \
@@ -826,6 +834,7 @@ CMakeFiles/2DEngine.dir/src/Renderer.cpp.o: /home/Wiktor/Projects/cpp/2DEngine/s
   /usr/include/c++/15.1.1/bits/shared_ptr.h \
   /usr/include/c++/15.1.1/bits/shared_ptr_atomic.h \
   /usr/include/c++/15.1.1/bits/shared_ptr_base.h \
+  /usr/include/c++/15.1.1/bits/specfun.h \
   /usr/include/c++/15.1.1/bits/sstream.tcc \
   /usr/include/c++/15.1.1/bits/std_abs.h \
   /usr/include/c++/15.1.1/bits/std_mutex.h \
@@ -867,6 +876,7 @@ CMakeFiles/2DEngine.dir/src/Renderer.cpp.o: /home/Wiktor/Projects/cpp/2DEngine/s
   /usr/include/c++/15.1.1/chrono \
   /usr/include/c++/15.1.1/climits \
   /usr/include/c++/15.1.1/clocale \
+  /usr/include/c++/15.1.1/cmath \
   /usr/include/c++/15.1.1/codecvt \
   /usr/include/c++/15.1.1/compare \
   /usr/include/c++/15.1.1/concepts \
@@ -904,7 +914,6 @@ CMakeFiles/2DEngine.dir/src/Renderer.cpp.o: /home/Wiktor/Projects/cpp/2DEngine/s
   /usr/include/c++/15.1.1/optional \
   /usr/include/c++/15.1.1/ostream \
   /usr/include/c++/15.1.1/pstl/execution_defs.h \
-  /usr/include/c++/15.1.1/pstl/glue_algorithm_defs.h \
   /usr/include/c++/15.1.1/pstl/glue_memory_defs.h \
   /usr/include/c++/15.1.1/pstl/pstl_config.h \
   /usr/include/c++/15.1.1/ratio \
@@ -915,6 +924,18 @@ CMakeFiles/2DEngine.dir/src/Renderer.cpp.o: /home/Wiktor/Projects/cpp/2DEngine/s
   /usr/include/c++/15.1.1/string \
   /usr/include/c++/15.1.1/string_view \
   /usr/include/c++/15.1.1/system_error \
+  /usr/include/c++/15.1.1/tr1/bessel_function.tcc \
+  /usr/include/c++/15.1.1/tr1/beta_function.tcc \
+  /usr/include/c++/15.1.1/tr1/ell_integral.tcc \
+  /usr/include/c++/15.1.1/tr1/exp_integral.tcc \
+  /usr/include/c++/15.1.1/tr1/gamma.tcc \
+  /usr/include/c++/15.1.1/tr1/hypergeometric.tcc \
+  /usr/include/c++/15.1.1/tr1/legendre_function.tcc \
+  /usr/include/c++/15.1.1/tr1/modified_bessel_func.tcc \
+  /usr/include/c++/15.1.1/tr1/poly_hermite.tcc \
+  /usr/include/c++/15.1.1/tr1/poly_laguerre.tcc \
+  /usr/include/c++/15.1.1/tr1/riemann_zeta.tcc \
+  /usr/include/c++/15.1.1/tr1/special_function_util.h \
   /usr/include/c++/15.1.1/tuple \
   /usr/include/c++/15.1.1/type_traits \
   /usr/include/c++/15.1.1/typeinfo \
@@ -952,6 +973,7 @@ CMakeFiles/2DEngine.dir/src/Renderer.cpp.o: /home/Wiktor/Projects/cpp/2DEngine/s
   /usr/include/linux/stddef.h \
   /usr/include/linux/types.h \
   /usr/include/locale.h \
+  /usr/include/math.h \
   /usr/include/pthread.h \
   /usr/include/sched.h \
   /usr/include/stdc-predef.h \
@@ -2144,9 +2166,9 @@ CMakeFiles/2DEngine.dir/src/Log.cpp.o:
 
 /usr/lib/libpcre2-8.so.0:
 
-/usr/lib/libharfbuzz.so.0:
+/usr/lib/libm.so.6:
 
-/usr/lib/libgraphite2.so.3:
+/usr/lib/libharfbuzz.so.0:
 
 /usr/lib/libcap.so.2:
 
@@ -2190,8 +2212,6 @@ CMakeFiles/2DEngine.dir/src/Log.cpp.o:
 
 /usr/include/rapidjson/writer.h:
 
-/usr/include/rapidjson/stream.h:
-
 /usr/include/rapidjson/ostreamwrapper.h:
 
 /usr/include/rapidjson/memorystream.h:
@@ -2226,15 +2246,37 @@ CMakeFiles/2DEngine.dir/src/Log.cpp.o:
 
 /home/Wiktor/Projects/cpp/2DEngine/src/Settings.cpp:
 
-/usr/lib/libm.so.6:
+/usr/include/c++/15.1.1/tr1/riemann_zeta.tcc:
 
-/usr/include/c++/15.1.1/bits/ranges_algo.h:
+/usr/include/c++/15.1.1/tr1/modified_bessel_func.tcc:
 
-/usr/include/c++/15.1.1/algorithm:
+/usr/include/c++/15.1.1/tr1/exp_integral.tcc:
+
+/usr/include/c++/15.1.1/tr1/ell_integral.tcc:
+
+/usr/include/c++/15.1.1/cmath:
+
+/usr/include/c++/15.1.1/bits/specfun.h:
+
+/usr/include/bits/mathcalls-helper-functions.h:
+
+/usr/lib/libgraphite2.so.3:
+
+/usr/include/bits/libm-simd-decl-stubs.h:
+
+/usr/include/bits/iscanonical.h:
+
+/usr/include/bits/fp-logb.h:
+
+/usr/include/rapidjson/stream.h:
+
+/usr/include/bits/flt-eval-method.h:
 
 /usr/include/rapidjson/reader.h:
 
 /home/Wiktor/Projects/cpp/2DEngine/third_party/SFML/install/include/SFML/Graphics/View.hpp:
+
+/usr/include/c++/15.1.1/tr1/special_function_util.h:
 
 /home/Wiktor/Projects/cpp/2DEngine/third_party/SFML/install/include/SFML/Graphics/VertexBuffer.hpp:
 
@@ -2266,6 +2308,10 @@ CMakeFiles/2DEngine.dir/src/Log.cpp.o:
 
 /home/Wiktor/Projects/cpp/2DEngine/third_party/SFML/install/include/SFML/Graphics/Glsl.inl:
 
+/usr/include/c++/15.1.1/tr1/gamma.tcc:
+
+/usr/include/bits/mathcalls-narrow.h:
+
 /home/Wiktor/Projects/cpp/2DEngine/third_party/SFML/install/include/SFML/Graphics/Glsl.hpp:
 
 /usr/lib32/libXdmcp.so.6:
@@ -2275,6 +2321,8 @@ CMakeFiles/2DEngine.dir/src/Log.cpp.o:
 /home/Wiktor/Projects/cpp/2DEngine/third_party/SFML/install/include/SFML/Graphics/Drawable.hpp:
 
 /home/Wiktor/Projects/cpp/2DEngine/third_party/SFML/install/include/SFML/Graphics/CoordinateType.hpp:
+
+/usr/include/math.h:
 
 /home/Wiktor/Projects/cpp/2DEngine/third_party/SFML/install/include/SFML/Graphics/Color.hpp:
 
@@ -2307,6 +2355,8 @@ CMakeFiles/2DEngine.dir/src/Log.cpp.o:
 /usr/include/stdlib.h:
 
 /usr/include/stdc-predef.h:
+
+/usr/include/bits/fp-fast.h:
 
 /usr/include/wctype.h:
 
@@ -2408,6 +2458,8 @@ CMakeFiles/2DEngine.dir/src/Settings.cpp.o:
 
 /usr/include/c++/15.1.1/initializer_list:
 
+/usr/include/bits/mathcalls-macros.h:
+
 /usr/include/c++/15.1.1/format:
 
 /usr/include/c++/15.1.1/filesystem:
@@ -2444,7 +2496,11 @@ CMakeFiles/2DEngine.dir/src/Settings.cpp.o:
 
 /usr/include/c++/15.1.1/cstdio:
 
+/usr/include/c++/15.1.1/tr1/legendre_function.tcc:
+
 /usr/include/c++/15.1.1/concepts:
+
+/usr/include/bits/math-vector.h:
 
 /usr/include/bits/uio_lim.h:
 
@@ -2496,6 +2552,8 @@ CMakeFiles/2DEngine.dir/src/Settings.cpp.o:
 
 /usr/include/bits/struct_mutex.h:
 
+/usr/include/c++/15.1.1/tr1/bessel_function.tcc:
+
 /usr/include/bits/types/__mbstate_t.h:
 
 /usr/include/bits/stdint-least.h:
@@ -2541,6 +2599,8 @@ CMakeFiles/2DEngine.dir/src/Settings.cpp.o:
 /usr/include/c++/15.1.1/bits/ranges_algobase.h:
 
 /usr/include/bits/long-double.h:
+
+/usr/include/c++/15.1.1/tr1/beta_function.tcc:
 
 /usr/include/bits/types/__fpos_t.h:
 
@@ -2710,8 +2770,6 @@ CMakeFiles/2DEngine.dir/src/Settings.cpp.o:
 
 /usr/include/c++/15.1.1/bits/stl_pair.h:
 
-/usr/include/c++/15.1.1/pstl/glue_algorithm_defs.h:
-
 /usr/include/gnu/stubs.h:
 
 /home/Wiktor/Projects/cpp/2DEngine/third_party/SFML/install/include/SFML/Config.hpp:
@@ -2753,6 +2811,8 @@ CMakeFiles/2DEngine.dir/src/Settings.cpp.o:
 /usr/include/c++/15.1.1/bits/streambuf_iterator.h:
 
 /home/Wiktor/Projects/cpp/2DEngine/third_party/SFML/install/include/SFML/System/Clock.hpp:
+
+/usr/include/c++/15.1.1/tr1/poly_hermite.tcc:
 
 /usr/include/c++/15.1.1/span:
 
@@ -2893,6 +2953,8 @@ CMakeFiles/2DEngine.dir/src/EventHandler.cpp.o:
 /usr/include/asm/posix_types.h:
 
 /usr/lib/libfreetype.so.6:
+
+/usr/include/c++/15.1.1/tr1/poly_laguerre.tcc:
 
 /usr/include/c++/15.1.1/x86_64-pc-linux-gnu/bits/c++config.h:
 
@@ -3080,6 +3142,8 @@ CMakeFiles/2DEngine.dir/src/EventHandler.cpp.o:
 
 /usr/include/c++/15.1.1/bits/ranges_util.h:
 
+/usr/include/bits/mathcalls.h:
+
 /usr/include/c++/15.1.1/bits/refwrap.h:
 
 /usr/include/bits/errno.h:
@@ -3095,6 +3159,8 @@ CMakeFiles/2DEngine.dir/src/EventHandler.cpp.o:
 /usr/include/c++/15.1.1/compare:
 
 /usr/include/c++/15.1.1/bits/std_mutex.h:
+
+/usr/include/c++/15.1.1/tr1/hypergeometric.tcc:
 
 /usr/include/c++/15.1.1/bits/stl_construct.h:
 
