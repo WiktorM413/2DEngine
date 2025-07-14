@@ -90,16 +90,16 @@
 ## 🧱 Entity Structure (Simplified, No ECS)
 
 - [ ] Represent entities as plain structs or classes containing:
-- [ ] Transform: position, velocity, scale
-- [ ] Sprite: texture, z-index
-- [ ] Physics: size, static/dynamic flag, optional collider info
-- [ ] Input: movement direction or input flags
+  - [ ] Transform: position, velocity, scale
+  - [ ] Sprite: texture, z-index
+  - [ ] Physics: size, static/dynamic flag, optional collider info
+  - [ ] Input: movement direction or input flags
 - [ ] Store entities in a single container (e.g. std::vector<Entity>)
 - [ ] Implement modular systems as functions or modules:
-- [ ] InputSystem: updates input-related fields on player entities
-- [ ] MovementSystem: applies velocity to position using deltaTime
-- [ ] CollisionSystem: checks and resolves overlaps between entities
-- [ ] RenderSystem: draws sprites using current transform data
+  - [ ] InputSystem: updates input-related fields on player entities
+  - [ ] MovementSystem: applies velocity to position using deltaTime
+  - [ ] CollisionSystem: checks and resolves overlaps between entities
+  - [ ] RenderSystem: draws sprites using current transform data
 - [ ] Run systems in a fixed order each frame:
   - [ ] Input
   - [ ] Physics/Movement
