@@ -101,10 +101,10 @@
 - [ ] CollisionSystem: checks and resolves overlaps between entities
 - [ ] RenderSystem: draws sprites using current transform data
 - [ ] Run systems in a fixed order each frame:
-        Input
-        Physics/Movement
-        Collision
-        Rendering
+  - [ ] Input
+  - [ ] Physics/Movement
+  - [ ] Collision
+  - [ ] Rendering
 - [ ] Use simple flags, enums, or type fields to categorize or tag entities (e.g. "Player", "Obstacle", "Enemy")
 ---
 
