@@ -1,3 +1,0 @@
-/home/Wiktor/Projects/cpp/2DEngine/build/CMakeFiles/2DEngine.dir
-/home/Wiktor/Projects/cpp/2DEngine/build/CMakeFiles/edit_cache.dir
-/home/Wiktor/Projects/cpp/2DEngine/build/CMakeFiles/rebuild_cache.dir
