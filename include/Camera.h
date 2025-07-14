@@ -20,4 +20,5 @@ public:
     void SetFocusedSprite(SpriteComponent* sprite) { focusedSprite = sprite; camera->setCenter(*focusedSprite->GetPosition()); }
     void Update();
     void Move(sf::Vector2f move);
+    void Zoom(float factor) { camera->zoom(factor); }
 };

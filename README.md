@@ -52,8 +52,7 @@
 #### Camera (`sf::View`)
 - ✅ Center view on a target (e.g. player position)  
 - ✅ Implement view panning (keyboard/mouse)  
-- [ ] Support view zoom in/out (mouse wheel or key)  
-- [ ] Adjust camera on window resize (keep aspect ratio)
+- ✅ Support view zoom in/out (mouse wheel or key)  
 - ✅ Draw text using `sf::Text` (HUDs, debugging)
 
 ---
@@ -88,25 +87,25 @@
 - [ ] Optional: Add 2D positional audio with stereo panning
 
 ---
+## 🧱 Entity Structure (Simplified, No ECS)
 
-### 🧱 ECS (Entity–Component System)
-- [ ] Create simple `EntityManager` (ID allocator)  
-- [ ] Store components in separate arrays or hash maps  
-- [ ] Implement essential components:
-  - [ ] Transform  
-  - [ ] Sprite  
-  - [ ] PhysicsBody  
-  - [ ] Input  
-
-- [ ] Implement basic systems:
-  - [ ] InputSystem (process input per entity)  
-  - [ ] MovementSystem (update position via velocity)  
-  - [ ] CollisionSystem (resolve overlaps)  
-  - [ ] RenderSystem (draw sprites with transforms)  
-
-- [ ] Update systems in correct order each frame  
-- [ ] Add ability to tag entities or group them
-
+- [ ] Represent entities as plain structs or classes containing:
+- [ ] Transform: position, velocity, scale
+- [ ] Sprite: texture, z-index
+- [ ] Physics: size, static/dynamic flag, optional collider info
+- [ ] Input: movement direction or input flags
+- [ ] Store entities in a single container (e.g. std::vector<Entity>)
+- [ ] Implement modular systems as functions or modules:
+- [ ] InputSystem: updates input-related fields on player entities
+- [ ] MovementSystem: applies velocity to position using deltaTime
+- [ ] CollisionSystem: checks and resolves overlaps between entities
+- [ ] RenderSystem: draws sprites using current transform data
+- [ ] Run systems in a fixed order each frame:
+        Input
+        Physics/Movement
+        Collision
+        Rendering
+- [ ] Use simple flags, enums, or type fields to categorize or tag entities (e.g. "Player", "Obstacle", "Enemy")
 ---
 
 ### 📜 Lua Scripting

@@ -17,6 +17,8 @@ int main()
     EventHandler eventHandler;
     Renderer* renderer = new Renderer();
     Camera* camera = new Camera();
+    sf::Clock clock;
+    float deltaTime = 0.f;
     settings.SetWidth(1920);
     settings.SetHeight(1080);
     sf::RenderWindow window(sf::VideoMode({settings.GetWidth(), settings.GetHeight()}), settings.GetTitle());
@@ -32,34 +34,15 @@ int main()
         window.close();
         exit(0);
     });
-    eventHandler.AddEventListener<sf::Event::KeyPressed>([&settings](const sf::Event::KeyPressed& key)
-    {
-        if (key.scancode == sf::Keyboard::Scancode::D)
-        {
-            FMT::info("D key is pressed - event 1");
-        }
-    });
-    eventHandler.AddEventListener<sf::Event::KeyPressed>([](const sf::Event::KeyPressed& key)
-    {
-        if (key.scancode == sf::Keyboard::Scancode::D)
-        {
-            FMT::info("D key is pressed - event 2");
-        }
-    });
 
-    eventHandler.OnKeyReleased(sf::Keyboard::Scancode::Enter, []()
+    eventHandler.OnKeyPressed(sf::Keyboard::Scancode::Q, [&camera]()
     {
-        FMT::info("enter key released - event 1");
+        camera->Zoom(2.f);
     });
-    eventHandler.OnKeyReleased(sf::Keyboard::Scancode::Enter, []()
+    eventHandler.OnKeyPressed(sf::Keyboard::Scancode::E, [&camera]()
     {
-        FMT::info("enter key released - event 2");
+        camera->Zoom(0.5f);
     });
-    eventHandler.OnKeyPressed(sf::Keyboard::Scancode::Enter, []()
-    {
-        FMT::info("enter key pressed");
-    });
-
     
 
     sf::Font font;
@@ -74,8 +57,8 @@ int main()
     renderer->SetWindow(&window);
     
     SpriteComponent* rectangle1 = renderer->RenderShape(Shapes::Rectangle{});
-    rectangle1->SetScale(100, 100);
-    rectangle1->SetPosition({50, 50});
+    rectangle1->SetScale(100.f, 100.f);
+    rectangle1->SetPosition({50.f, 50.f});
     rectangle1->SetZIndex(3);
     rectangle1->SetColor(sf::Color::Red);
 
@@ -103,6 +86,7 @@ int main()
 
     while (window.isOpen())
     {
+        deltaTime = clock.restart().asSeconds();
         eventHandler.HandleEvents(&window);
 
         camera->Update();
