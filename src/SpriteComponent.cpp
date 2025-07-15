@@ -83,7 +83,8 @@ void SpriteComponent::SetScale(float targetWidth, float targetHeight)
 void SpriteComponent::SpriteComponent::Move(sf::Vector2f movePoint)
 {
     position += movePoint;
-    SetPosition(position);
+    transform->SetPosition(position);
+
 }
 
 sf::Sprite* SpriteComponent::GetDrawable()

@@ -9,7 +9,7 @@ class SpriteComponent
 {
 private:
     TransformComponent* transform;
-    PhysicsBodyComponent* physicsBody;
+    PhysicsBodyComponent* physicsBody; //TODO size of sprites doesnt change. after fixing it link it to this
     sf::Sprite* sprite;
     sf::Texture* texture;
     sf::Vector2f position;

@@ -83,7 +83,7 @@ void EventHandler::OnCollisionEnter(SpriteComponent* spriteA, SpriteComponent* s
         PhysicsBodyComponent* physicsBodyA = spriteA->GetPhysicsBodyComponent();
         PhysicsBodyComponent* physicsBodyB = spriteB->GetPhysicsBodyComponent();
 
-        if (checkAABB(*spriteA->GetPosition(), physicsBodyA->GetSize(), *spriteB->GetPosition(), physicsBodyB->GetSize()))
+        if (checkAABB(*spriteA->GetPosition(), physicsBodyA->GetSize(), *spriteB->GetPosition(), physicsBodyB->GetSize()) && spriteA->GetZIndex() == spriteB->GetZIndex())
         {
             action();
         }

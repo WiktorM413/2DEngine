@@ -55,8 +55,13 @@ int main()
     rectangle1->SetZIndex(3);
     rectangle1->SetColor(sf::Color::Red);
     //TODO Add another rectangle and check whether collision works
+    SpriteComponent* rectangle2 = renderer->RenderShape(Shapes::Rectangle{});
+    rectangle2->SetScale(100.f, 1000.f);
+    rectangle2->SetPosition({300.f, 0.f});
+    rectangle2->SetZIndex(3);
 
-    rectangle1->SetTransformComponent(renderer->RenderTransformComponent(*rectangle1->GetPosition(), {50.f, 0.f}));
+
+    rectangle1->SetTransformComponent(renderer->RenderTransformComponent(*rectangle1->GetPosition(), {0.f, 0.f}));
 
     eventHandler.AddEventListener<sf::Event::KeyPressed>([&rectangle1](const sf::Event::KeyPressed& key)
     {
