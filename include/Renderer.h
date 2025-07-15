@@ -8,6 +8,8 @@
 #include <string>
 
 #include "SpriteComponent.h"
+#include "components/Component.h"
+#include "components/TransformComponent.h"
 
 namespace Shapes
 {
@@ -19,6 +21,7 @@ class Renderer
 {
 private:
     std::list<SpriteComponent*> sprites;
+    std::list<Component*> components;
     std::list<sf::Text*> texts;
     sf::RenderWindow* w;
     sf::Color clearColor;
@@ -42,5 +45,6 @@ public:
     void RenderBackground(sf::Texture* texture);
     void RenderBackground(const char* path);
     void RenderBackground(std::filesystem::path& filename);
-
+    TransformComponent* RenderTransformComponent(sf::Vector2f newPosition, sf::Vector2f newVelocity);
+    std::list<SpriteComponent*>* GetAllSprites() { return &sprites; }
 };

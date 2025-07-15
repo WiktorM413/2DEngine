@@ -1,4 +1,15 @@
 #include "../include/EventHandler.h"
+#include "../include/components/PhysicsBodyComponent.h"
+
+bool EventHandler::checkAABB(const sf::Vector2f& posA, const sf::Vector2f& sizeA,
+               const sf::Vector2f& posB, const sf::Vector2f& sizeB) {
+    return (
+        posA.x < posB.x + sizeB.x &&
+        posA.x + sizeA.x > posB.x &&
+        posA.y < posB.y + sizeB.y &&
+        posA.y + sizeA.y > posB.y
+    );
+}
 
 void EventHandler::HandleEvents(sf::Window* window)
 {
@@ -35,6 +46,10 @@ void EventHandler::HandleEvents(sf::Window* window)
             }
         }
     });
+    for (auto& event : collisionEvents)
+    {
+        event();
+    }
 }
 
 void EventHandler::OnKeyPressed(sf::Keyboard::Scancode code, std::function<void()> action)
@@ -59,4 +74,18 @@ void EventHandler::OnKeyReleased(sf::Keyboard::Scancode code, std::function<void
         }
     };
     keyReleasedEvents[code].push_back(wrapper);
+}
+
+void EventHandler::OnCollisionEnter(SpriteComponent* spriteA, SpriteComponent* spriteB, std::function<void()> action)
+{
+    std::function<void()> wrapper = [&spriteA, spriteB, action]()
+    {
+        PhysicsBodyComponent* physicsBodyA = spriteA->GetPhysicsBodyComponent();
+        PhysicsBodyComponent* physicsBodyB = spriteB->GetPhysicsBodyComponent();
+
+        if (checkAABB(*spriteA->GetPosition(), physicsBodyA->GetSize(), *spriteB->GetPosition(), physicsBodyB->GetSize()))
+        {
+            action();
+        }
+    };
 }

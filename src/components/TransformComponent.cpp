@@ -1,5 +1,4 @@
-#include "../include/TransformComponent.h"
-
+#include "../../include/components/TransformComponent.h"
 TransformComponent::TransformComponent()
 {
     position = {0.f, 0.f};
@@ -11,3 +10,5 @@ TransformComponent::TransformComponent(sf::Vector2f newPosition, sf::Vector2f ne
     position = newPosition;
     velocity = newVelocity;
 }
+
+TransformComponent::~TransformComponent() {}

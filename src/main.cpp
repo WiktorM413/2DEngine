@@ -29,6 +29,7 @@ int main()
     renderer->RenderBackground("../img/forest.jpg");
     renderer->SetWindow(&window);
     
+    movementSystem.SetDamping(0.98f);
 
     eventHandler.AddEventListener<sf::Event::Closed>([&window, &renderer, &camera](const sf::Event::Closed&)
     {
@@ -53,12 +54,9 @@ int main()
     rectangle1->SetPosition({50.f, 50.f});
     rectangle1->SetZIndex(3);
     rectangle1->SetColor(sf::Color::Red);
+    //TODO Add another rectangle and check whether collision works
 
-    std::list<TransformComponent> movers;
-    TransformComponent player;
-    player.SetPosition({100.f, 100.f});
-    player.SetVelocity({50.f, 0.f});
-    movers.push_back(player);
+    rectangle1->SetTransformComponent(renderer->RenderTransformComponent(*rectangle1->GetPosition(), {50.f, 0.f}));
 
     eventHandler.AddEventListener<sf::Event::KeyPressed>([&rectangle1](const sf::Event::KeyPressed& key)
     {
@@ -79,19 +77,24 @@ int main()
             rectangle1->Move({0, 10});
         }
     });
-
+    
     camera->SetFocusedSprite(rectangle1);
     while (window.isOpen())
     {
         eventHandler.HandleEvents(&window);
 
         float deltaTime = clock.restart().asSeconds();
-        movementSystem.Update(movers, deltaTime);
+        
+        std::list<SpriteComponent*>* sprites = renderer->GetAllSprites();
 
-        window.clear(sf::Color::Black);
-        for (auto& t : movers)
+        for (auto& sprite : *sprites)
         {
-            rectangle1->SetPosition(t.GetPosition());
+            TransformComponent* transform = sprite->GetTransformComponent();
+            if (sprite->GetTransformComponent() != nullptr)
+            {
+                movementSystem.Update(transform, deltaTime);
+                sprite->SetPosition(transform->GetPosition());
+            }
         }
 
         camera->Update();

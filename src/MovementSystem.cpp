@@ -24,15 +24,11 @@ MovementSystem::MovementSystem(sf::Vector2f newGravity, float newDamping)
     damping = newDamping;
 }
 
-void MovementSystem::Update(std::list<TransformComponent>& entities, float deltaTime)
+void MovementSystem::Update(TransformComponent* component, float deltaTime)
 {
-    for (TransformComponent& component : entities)
-    {
-        //uncomment for gravity to work
-        //component.SetVelocity(component.GetVelocity() + (gravity * deltatime));
-
-        sf::Vector2f displacement = component.GetVelocity() * deltaTime;
-        component.SetPosition(component.GetPosition() + displacement);
-        component.SetVelocity(component.GetVelocity() * damping);
-    }
+    //uncomment for gravity to work
+    //component.SetVelocity(component.GetVelocity() + (gravity * deltatime));
+    sf::Vector2f displacement = component->GetVelocity() * deltaTime;
+    component->SetPosition(component->GetPosition() + displacement);
+    component->SetVelocity(component->GetVelocity() * damping);
 }

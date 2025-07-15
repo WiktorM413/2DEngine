@@ -19,6 +19,10 @@ Renderer::~Renderer()
     {
         delete sprite;
     }
+    for (Component* component : components)
+    {
+        delete component;
+    }
 }
 
 void Renderer::draw()
@@ -214,4 +218,12 @@ void Renderer::RenderBackground(std::filesystem::path& filename)
     }
      
     FMT::warn("Failed to loead texture from file: " + filename.string());
+}
+
+TransformComponent* Renderer::RenderTransformComponent(sf::Vector2f newPosition, sf::Vector2f newVelocity)
+{
+    TransformComponent* transformComponent = new TransformComponent(newPosition, newVelocity);
+    components.push_back(transformComponent);
+
+    return transformComponent;
 }

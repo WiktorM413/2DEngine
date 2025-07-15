@@ -2,12 +2,14 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "../include/TransformComponent.h"
+#include "../include/components/TransformComponent.h"
+#include "../include/components/PhysicsBodyComponent.h"
 
 class SpriteComponent
 {
 private:
     TransformComponent* transform;
+    PhysicsBodyComponent* physicsBody;
     sf::Sprite* sprite;
     sf::Texture* texture;
     sf::Vector2f position;
@@ -18,6 +20,8 @@ public:
     SpriteComponent(sf::Texture* newTexture);
     SpriteComponent(sf::Sprite& newSprite);
     SpriteComponent(sf::Shape& newShape);
+    SpriteComponent(TransformComponent* component);
+    SpriteComponent(PhysicsBodyComponent* component);
     ~SpriteComponent();
 
     void SetTexture(sf::Texture* newTexture);
@@ -33,6 +37,10 @@ public:
     sf::Color GetColor() const { return sprite->getColor(); }
     void SetZIndex(int newZIndex) { zIndex = newZIndex; }
     int GetZIndex() const { return zIndex; }
+    void SetTransformComponent(TransformComponent* t) { transform = t; }
+    TransformComponent* GetTransformComponent() { return transform; }
+    void SetPhysicsBodyComponent(PhysicsBodyComponent* p) { physicsBody = p; }
+    PhysicsBodyComponent* GetPhysicsBodyComponent() { return physicsBody; }
     void Move(sf::Vector2f movePoint);
 
     sf::Sprite* GetDrawable();

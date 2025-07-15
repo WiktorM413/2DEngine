@@ -6,18 +6,24 @@ SpriteComponent::SpriteComponent()
 {
     sprite = nullptr;
     texture = new sf::Texture();
+    transform = nullptr;
+    physicsBody = nullptr;
 }
 
 SpriteComponent::SpriteComponent(sf::Texture* newTexture)
 {
     texture = newTexture;
     sprite = new sf::Sprite(*texture);
+    transform = nullptr;
+    physicsBody = nullptr;
 }
 
 SpriteComponent::SpriteComponent(sf::Sprite& newSprite)
 {
     sprite = new sf::Sprite(newSprite);
     texture = new sf::Texture(sprite->getTexture());
+    transform = nullptr;
+    physicsBody = nullptr;
 }
 
 SpriteComponent::SpriteComponent(sf::Shape& newShape)
@@ -28,6 +34,8 @@ SpriteComponent::SpriteComponent(sf::Shape& newShape)
     
     sprite = new sf::Sprite(renderTexture.getTexture());
     texture = new sf::Texture(sprite->getTexture());
+    transform = nullptr;
+    physicsBody = nullptr;
 }
 
 SpriteComponent::~SpriteComponent()
