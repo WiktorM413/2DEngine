@@ -2,9 +2,12 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "../include/TransformComponent.h"
+
 class SpriteComponent
 {
 private:
+    TransformComponent* transform;
     sf::Sprite* sprite;
     sf::Texture* texture;
     sf::Vector2f position;
