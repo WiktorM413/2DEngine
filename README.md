@@ -59,10 +59,10 @@
 
 ## 🧱 Phase 3: 2D Physics & Collision
 
-- [ ] Create `TransformComponent` with position and velocity  
-- [ ] Create `PhysicsBodyComponent` with size, flags, and mass (if needed)  
-- [ ] Integrate simple gravity into motion  
-- [ ] Apply movement using Euler integration (`pos += vel * dt`)  
+- ✅ Create `TransformComponent` with position and velocity  
+- ✅ Create `PhysicsBodyComponent` with size, flags, and mass (if needed)  
+- ✅ Integrate simple gravity into motion  
+- ✅ Apply movement using Euler integration (`pos += vel * dt`)  
 - [ ] Implement AABB (axis-aligned bounding box) vs AABB checks  
 - [ ] Broad-phase culling:
   - [ ] Simple spatial grid or coarse pass  
