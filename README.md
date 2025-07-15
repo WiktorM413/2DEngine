@@ -66,14 +66,6 @@
 - [ ] Implement AABB (axis-aligned bounding box) vs AABB checks  
 - [ ] Broad-phase culling:
   - [ ] Simple spatial grid or coarse pass  
-- [ ] Narrow-phase:
-  - [ ] Resolve overlaps by pushing objects apart  
-  - [ ] Clamp velocity or cancel movement when hitting a wall  
-
-### Debugging Tools
-- [ ] Draw AABBs around entities  
-- [ ] Color colliding objects differently  
-- [ ] Toggle physics debug draw on/off with a key
 
 ---
 
