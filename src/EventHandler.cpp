@@ -1,5 +1,9 @@
 #include "../include/EventHandler.h"
 #include "../include/components/PhysicsBodyComponent.h"
+#include "../include/Log.h"
+
+#include <iostream>
+using namespace std;
 
 bool EventHandler::checkAABB(const sf::Vector2f& posA, const sf::Vector2f& sizeA,
                const sf::Vector2f& posB, const sf::Vector2f& sizeB)
@@ -79,14 +83,21 @@ void EventHandler::OnKeyReleased(sf::Keyboard::Scancode code, std::function<void
 
 void EventHandler::OnCollisionEnter(SpriteComponent* spriteA, SpriteComponent* spriteB, std::function<void()> action)
 {
-    std::function<void()> wrapper = [&spriteA, spriteB, action]()
+    std::function<void()> wrapper = [&spriteA, &spriteB, &action]()
     {
         PhysicsBodyComponent* physicsBodyA = spriteA->GetPhysicsBodyComponent();
         PhysicsBodyComponent* physicsBodyB = spriteB->GetPhysicsBodyComponent();
+        if (physicsBodyA == nullptr || physicsBodyB == nullptr)
+        {
+            return;
+        }
+        
+        FMT::info("spriteA->Position: {" + to_string((float)(spriteA->GetPosition().x)) + ' ' + to_string((float)(spriteA->GetPosition().y)) + "}");
 
-        if (checkAABB(*spriteA->GetPosition(), *physicsBodyA->GetSize(), *spriteB->GetPosition(), *physicsBodyB->GetSize()) && spriteA->GetZIndex() == spriteB->GetZIndex())
+        if (checkAABB(spriteA->GetPosition(), physicsBodyA->GetSize(), spriteB->GetPosition(), physicsBodyB->GetSize()) && spriteA->GetZIndex() == spriteB->GetZIndex())
         {
             action();
         }
     };
+    collisionEvents.push_back(wrapper);
 }

@@ -3,17 +3,19 @@
 #include <SFML/System/Vector2.hpp>
 #include "Component.h"
 
+class SpriteComponent;
+
 class PhysicsBodyComponent : public Component
 {
 private:
-    sf::Vector2f* size;
+    SpriteComponent* owner;
     bool isStatic = false;
     bool isColliding = false;
 
 public:
-    PhysicsBodyComponent(sf::Vector2f* newSize);
+    PhysicsBodyComponent(SpriteComponent* newOwner);
     ~PhysicsBodyComponent();
 
-    sf::Vector2f* GetSize() { return size; }
-    void SetSize(sf::Vector2f* newSize) { size = newSize; }
+    sf::Vector2f GetSize();
+    void SetSize(sf::Vector2f newSize);
 };

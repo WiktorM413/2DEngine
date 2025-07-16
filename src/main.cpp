@@ -50,18 +50,24 @@ int main()
     });
      
     SpriteComponent* rectangle1 = renderer->RenderShape(Shapes::Rectangle{});
-    rectangle1->SetScale(200.f, 50.f);
+    rectangle1->SetSize({50.f, 50.f});
     rectangle1->SetPosition({50.f, 50.f});
     rectangle1->SetZIndex(3);
     rectangle1->SetColor(sf::Color::Red);
+    rectangle1->SetPhysicsBodyComponent(renderer->RenderPhysicsBodyComponent(rectangle1));
     //TODO Add another rectangle and check whether collision works
     SpriteComponent* rectangle2 = renderer->RenderShape(Shapes::Rectangle{});
-    rectangle2->SetScale(100.f, 1000.f);
+    rectangle2->SetSize({100.f, 10000.f});
     rectangle2->SetPosition({300.f, 0.f});
     rectangle2->SetZIndex(3);
+    rectangle2->SetPhysicsBodyComponent(renderer->RenderPhysicsBodyComponent(rectangle2));
 
+    eventHandler.OnCollisionEnter(rectangle1, rectangle2, []()
+    {
+        cout << "COLLISION DETECTED!";
+    });
 
-    rectangle1->SetTransformComponent(renderer->RenderTransformComponent(*rectangle1->GetPosition(), {0.f, 100.f}));
+    rectangle1->SetTransformComponent(renderer->RenderTransformComponent(rectangle1->GetPosition(), {0.f, 100.f}));
 
     eventHandler.AddEventListener<sf::Event::KeyPressed>([&rectangle1](const sf::Event::KeyPressed& key)
     {
@@ -100,6 +106,13 @@ int main()
                 movementSystem.Update(transform, deltaTime);
                 sprite->SetPosition(transform->GetPosition());
             }
+        }
+
+        std::list<std::function<void()>>* collisionEvents = eventHandler.GetCollisionEvents();
+        
+        for (auto& event : *collisionEvents)
+        {
+            event();
         }
 
         camera->Update();

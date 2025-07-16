@@ -19,7 +19,7 @@ Camera::Camera(SpriteComponent* focusedSprite, const sf::Vector2f& size)
     this->focusedSprite = focusedSprite;
 
     camera = new sf::View();
-    camera->setCenter(*focusedSprite->GetPosition());
+    camera->setCenter(focusedSprite->GetPosition());
     camera->setSize(size);
 }
 
@@ -32,7 +32,7 @@ void Camera::Update()
 {
     if (focusedSprite)
     {
-        camera->setCenter(*focusedSprite->GetPosition());
+        camera->setCenter(focusedSprite->GetPosition());
     }
 }
 

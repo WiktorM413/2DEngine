@@ -17,7 +17,7 @@ public:
     void SetSize(sf::Vector2f size) { camera->setSize(size); }
     sf::Vector2f GetSize() { return camera->getSize(); }
     sf::View* GetView() { return camera; }
-    void SetFocusedSprite(SpriteComponent* sprite) { focusedSprite = sprite; camera->setCenter(*focusedSprite->GetPosition()); }
+    void SetFocusedSprite(SpriteComponent* sprite) { focusedSprite = sprite; camera->setCenter(focusedSprite->GetPosition()); }
     void Update();
     void Move(sf::Vector2f move);
     void Zoom(float factor) { camera->zoom(factor); }

@@ -13,23 +13,22 @@ private:
     sf::RectangleShape* sprite;
     sf::Texture* texture;
     sf::Vector2f* size;
-    sf::Vector2f position;
     int zIndex = 0;
 
 public:
     SpriteComponent(sf::Texture* newTexture);
     SpriteComponent(sf::Sprite& newSprite);
-    SpriteComponent(sf::Shape& newShape);
+    SpriteComponent(sf::Shape* newShape);
     SpriteComponent(TransformComponent* component);
     SpriteComponent(PhysicsBodyComponent* component);
     ~SpriteComponent();
 
-    void SetSize(sf::Vector2f newSize);
+    void SetSize(sf::Vector2f newSize) { sprite->setSize(newSize); *size = newSize; }
     sf::Vector2f GetSize() { return *size; }
     void SetTexture(sf::Texture* newTexture);
     sf::Texture* GetTexture() const { return texture; }
     void SetPosition(sf::Vector2f newPosition);
-    sf::Vector2f* GetPosition();
+    sf::Vector2f GetPosition() { return sprite->getPosition(); }
     void SetScale(sf::Vector2f newScale) { sprite->setScale(newScale); }
     void SetScale(float targetWidth, float targetHeight);
     sf::Vector2f GetScale() const { return sprite->getScale(); }
@@ -41,7 +40,7 @@ public:
     int GetZIndex() const { return zIndex; }
     void SetTransformComponent(TransformComponent* t) { transform = t; }
     TransformComponent* GetTransformComponent() { return transform; }
-    void SetPhysicsBodyComponent(PhysicsBodyComponent* p) { physicsBody = p; physicsBody->SetSize(size); }
+    void SetPhysicsBodyComponent(PhysicsBodyComponent* p) { physicsBody = p; physicsBody->SetSize(*size); }
     PhysicsBodyComponent* GetPhysicsBodyComponent() { return physicsBody; }
     void Move(sf::Vector2f movePoint);
 

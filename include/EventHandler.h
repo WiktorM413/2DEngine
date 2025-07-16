@@ -32,4 +32,5 @@ public:
     void OnKeyPressed(sf::Keyboard::Scancode code, std::function<void()> action);
     void OnKeyReleased(sf::Keyboard::Scancode code, std::function<void()> action);
     void OnCollisionEnter(SpriteComponent* spriteA, SpriteComponent* spriteB, std::function<void()> action);
+    std::list<std::function<void()>>* GetCollisionEvents() { return &collisionEvents; }
 };

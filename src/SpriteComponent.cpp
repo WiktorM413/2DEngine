@@ -26,13 +26,14 @@ SpriteComponent::SpriteComponent(sf::Sprite& newSprite)
     size = new sf::Vector2f(texture->getSize());
 }
 
-SpriteComponent::SpriteComponent(sf::Shape& newShape)
+SpriteComponent::SpriteComponent(sf::Shape* newShape)
 {
     sf::RenderTexture renderTexture;
     renderTexture.clear(sf::Color::Transparent);
-    renderTexture.draw(newShape);
+    renderTexture.draw(*newShape);
     
     texture = new sf::Texture(renderTexture.getTexture());
+    sprite = new sf::RectangleShape();
     sprite->setSize({(float)texture->getSize().x, (float)texture->getSize().y});
     sprite->setTexture(texture);
     
@@ -46,12 +47,6 @@ SpriteComponent::~SpriteComponent()
     delete sprite;
     delete texture;
     delete size;
-}
-
-void SpriteComponent::SetSize(sf::Vector2f newSize)
-{
-    *size = newSize;
-    
 }
 
 void SpriteComponent::SetTexture(sf::Texture* newTexture)
@@ -72,14 +67,9 @@ void SpriteComponent::SetTexture(sf::Texture* newTexture)
 
 void SpriteComponent::SetPosition(sf::Vector2f newPosition)
 {
-    position = newPosition;
-    sprite->setPosition(position);
+    sprite->setPosition(newPosition);
 }
 
-sf::Vector2f* SpriteComponent::GetPosition()
-{
-    return &position;
-}
 
 void SpriteComponent::SetScale(float targetWidth, float targetHeight)
 {
@@ -95,9 +85,7 @@ void SpriteComponent::SetScale(float targetWidth, float targetHeight)
 
 void SpriteComponent::SpriteComponent::Move(sf::Vector2f movePoint)
 {
-    position += movePoint;
-    transform->SetPosition(position);
-
+    transform->SetPosition(transform->GetPosition() + movePoint);
 }
 
 sf::RectangleShape* SpriteComponent::GetDrawable()

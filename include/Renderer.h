@@ -46,5 +46,6 @@ public:
     void RenderBackground(const char* path);
     void RenderBackground(std::filesystem::path& filename);
     TransformComponent* RenderTransformComponent(sf::Vector2f newPosition, sf::Vector2f newVelocity);
+    PhysicsBodyComponent* RenderPhysicsBodyComponent(SpriteComponent* owner);
     std::list<SpriteComponent*>* GetAllSprites() { return &sprites; }
 };

@@ -227,3 +227,11 @@ TransformComponent* Renderer::RenderTransformComponent(sf::Vector2f newPosition,
 
     return transformComponent;
 }
+
+PhysicsBodyComponent* Renderer::RenderPhysicsBodyComponent(SpriteComponent* owner)
+{
+    PhysicsBodyComponent* p = new PhysicsBodyComponent(owner);
+    components.push_back(p);
+
+    return p;
+}
