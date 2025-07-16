@@ -2,28 +2,28 @@
 
 #include <iostream>
 
-SpriteComponent::SpriteComponent()
-{
-    sprite = nullptr;
-    texture = new sf::Texture();
-    transform = nullptr;
-    physicsBody = nullptr;
-}
 
 SpriteComponent::SpriteComponent(sf::Texture* newTexture)
 {
     texture = newTexture;
-    sprite = new sf::Sprite(*texture);
+    sprite = new sf::RectangleShape();
+    sprite->setSize({(float)texture->getSize().x, (float)texture->getSize().y});
+    sprite->setTexture(texture);
     transform = nullptr;
     physicsBody = nullptr;
+    size = new sf::Vector2f(texture->getSize());
 }
 
 SpriteComponent::SpriteComponent(sf::Sprite& newSprite)
 {
-    sprite = new sf::Sprite(newSprite);
-    texture = new sf::Texture(sprite->getTexture());
+    texture = new sf::Texture(newSprite.getTexture());
+    sprite = new sf::RectangleShape();
+    sprite->setSize({(float)texture->getSize().x, (float)texture->getSize().y});
+    sprite->setTexture(texture);
+
     transform = nullptr;
     physicsBody = nullptr;
+    size = new sf::Vector2f(texture->getSize());
 }
 
 SpriteComponent::SpriteComponent(sf::Shape& newShape)
@@ -32,16 +32,26 @@ SpriteComponent::SpriteComponent(sf::Shape& newShape)
     renderTexture.clear(sf::Color::Transparent);
     renderTexture.draw(newShape);
     
-    sprite = new sf::Sprite(renderTexture.getTexture());
-    texture = new sf::Texture(sprite->getTexture());
+    texture = new sf::Texture(renderTexture.getTexture());
+    sprite->setSize({(float)texture->getSize().x, (float)texture->getSize().y});
+    sprite->setTexture(texture);
+    
     transform = nullptr;
     physicsBody = nullptr;
+    size = new sf::Vector2f(texture->getSize());
 }
 
 SpriteComponent::~SpriteComponent()
 {
     delete sprite;
     delete texture;
+    delete size;
+}
+
+void SpriteComponent::SetSize(sf::Vector2f newSize)
+{
+    *size = newSize;
+    
 }
 
 void SpriteComponent::SetTexture(sf::Texture* newTexture)
@@ -49,11 +59,14 @@ void SpriteComponent::SetTexture(sf::Texture* newTexture)
     texture = newTexture;
     if (sprite != nullptr)
     {
-        sprite->setTexture(*texture);
+        sprite->setSize({(float)texture->getSize().x, (float)texture->getSize().y});
+        sprite->setTexture(texture);
     }
     else
     {
-        sprite = new sf::Sprite(*texture);
+        sprite = new sf::RectangleShape();
+        sprite->setSize({(float)texture->getSize().x, (float)texture->getSize().y});
+        sprite->setTexture(texture);
     }
 }
 
@@ -87,7 +100,7 @@ void SpriteComponent::SpriteComponent::Move(sf::Vector2f movePoint)
 
 }
 
-sf::Sprite* SpriteComponent::GetDrawable()
+sf::RectangleShape* SpriteComponent::GetDrawable()
 {
     return sprite;
 }

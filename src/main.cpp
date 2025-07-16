@@ -50,7 +50,7 @@ int main()
     });
      
     SpriteComponent* rectangle1 = renderer->RenderShape(Shapes::Rectangle{});
-    rectangle1->SetScale(100.f, 100.f);
+    rectangle1->SetScale(200.f, 50.f);
     rectangle1->SetPosition({50.f, 50.f});
     rectangle1->SetZIndex(3);
     rectangle1->SetColor(sf::Color::Red);
@@ -61,7 +61,7 @@ int main()
     rectangle2->SetZIndex(3);
 
 
-    rectangle1->SetTransformComponent(renderer->RenderTransformComponent(*rectangle1->GetPosition(), {0.f, 0.f}));
+    rectangle1->SetTransformComponent(renderer->RenderTransformComponent(*rectangle1->GetPosition(), {0.f, 100.f}));
 
     eventHandler.AddEventListener<sf::Event::KeyPressed>([&rectangle1](const sf::Event::KeyPressed& key)
     {

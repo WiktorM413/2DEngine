@@ -2,7 +2,8 @@
 #include "../include/components/PhysicsBodyComponent.h"
 
 bool EventHandler::checkAABB(const sf::Vector2f& posA, const sf::Vector2f& sizeA,
-               const sf::Vector2f& posB, const sf::Vector2f& sizeB) {
+               const sf::Vector2f& posB, const sf::Vector2f& sizeB)
+{
     return (
         posA.x < posB.x + sizeB.x &&
         posA.x + sizeA.x > posB.x &&
@@ -83,7 +84,7 @@ void EventHandler::OnCollisionEnter(SpriteComponent* spriteA, SpriteComponent* s
         PhysicsBodyComponent* physicsBodyA = spriteA->GetPhysicsBodyComponent();
         PhysicsBodyComponent* physicsBodyB = spriteB->GetPhysicsBodyComponent();
 
-        if (checkAABB(*spriteA->GetPosition(), physicsBodyA->GetSize(), *spriteB->GetPosition(), physicsBodyB->GetSize()) && spriteA->GetZIndex() == spriteB->GetZIndex())
+        if (checkAABB(*spriteA->GetPosition(), *physicsBodyA->GetSize(), *spriteB->GetPosition(), *physicsBodyB->GetSize()) && spriteA->GetZIndex() == spriteB->GetZIndex())
         {
             action();
         }
